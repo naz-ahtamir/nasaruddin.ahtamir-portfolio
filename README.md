@@ -24,14 +24,15 @@ A personal portfolio website built with **HTML & CSS**, showcasing my journey as
 ---
 
 ## 📂 Project Structure
-naz-portfolio/
+```
+nasaruddin-portfolio/
 ├── index.html        # Main portfolio page
 ├── images/           # Project screenshots
 │   ├── SafetyComplaint.png
 │   ├── PenggunaanP3K.png
 │   └── PTW.png
 └── README.md         # Documentation
-
+```
 ---
 
 ## 🚀 Getting Started
@@ -46,12 +47,14 @@ naz-portfolio/
 ---
 
 ## 📬 Contact
-Email: nasaruddin.ahtamir@gmail.com
-LinkedIn: linkedin.com/in/nasaruddin-st-86a593258
-GitHub: github.com/naz-ahtamir
+- Email: nasaruddin.ahtamir@gmail.com
+- LinkedIn: linkedin.com/in/nasaruddin-st-86a593258
+- GitHub: github.com/naz-ahtamir
 
 ---
 
 ## ⚖️ License
 © 2026 Nasaruddin. All rights reserved.
+
 This project is built for personal branding and portfolio purposes.
+
