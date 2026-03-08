@@ -53,6 +53,12 @@ nasaruddin-portfolio/
 
 ---
 
+## 🌐 Access Website
+You can visit the live site here:
+👉 [Nasaruddin Portfolio](https://naz-ahtamir.github.io/nasaruddin.ahtamir-portfolio/)
+
+---
+
 ## ⚖️ License
 © 2026 Nasaruddin. All rights reserved.
 
