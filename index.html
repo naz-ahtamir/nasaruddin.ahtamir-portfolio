@@ -1,113 +1,237 @@
 <!DOCTYPE html>
-<html lang="EN">
+<html lang="EN" class="scroll-smooth">      
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nasaruddin.ahtamir-portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
-</head>
-    <style>
-        body {
-            font-family: 'Kumbh Sans', sans-serif;
-            }
-            p {line-height: 1;}
-
-        form {
-            max-width: 500px;
-            margin-left: 0 auto;
-            }
-            label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            }
-            input, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            box-sizing: border-box;
-            }
-            button {
-            margin-top: 10px;
-            padding: 8px 16px;
-            }
+    <title>nasaruddin.ahtamir-portfolio</title>    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @theme {
+            --font-grotesk: 'Space Grotesk', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
     </style>
-<body>
-    <header>
-        <h1>NASARUDDIN</h1>
-        <p>| Software Engineer | Web Developer | Occupational Health and Safety Expert | Occupational Health and Safety Assistant Engineer | Auditor SMK3 |</p>
-            <nav>
-                <ul>
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>        
-    </header>
+</head>
+<body class="font-grotesk bg-black text-white antialiased relative">
+    <nav class="fixed top-0 left-0 right-0 z-50 
+            bg-gradient-to-r from-black via-[#0a1a24] to-[#00e5ff]/20 
+            backdrop-blur-md border-b border-[#00e5ff] 
+            transition-all duration-300 
+            hover:from-[#001f33] hover:via-[#00334d] hover:to-[#00e5ff]/40">
+        <div class="max-w-7xl mx-auto flex justify-end items-center px-6 py-3 gap-6">
+                <ul class="desktop-nav flex items-center gap-8">
+                        <li><a href="#home" class="relative text-xs tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
+                            transition-colors duration-300 
+                            hover:text-[#00e5ff] hover:after:w-full font-mono">HOME</a></li>
+
+                            <li><a href="#about" class="relative text-xs tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
+                            transition-colors duration-300 
+                            hover:text-[#00e5ff] hover:after:w-full font-mono">ABOUT</a></li>
+                        <li><a href="#projects" class="relative text-xs tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
+                            transition-colors duration-300 
+                            hover:text-[#00e5ff] hover:after:w-full font-mono">PROJECTS</a></li>
+                        <li><a href="#contact" class="relative text-xs tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
+                            transition-colors duration-300 
+                            hover:text-[#00e5ff] hover:after:w-full font-mono">CONTACT</a></li>
+                    </ul>
+    </nav>
+    
     <main>
-        <section id="home">
-            <h2>
-                HOME
-            </h2>            
-            <p>Coming from a background in leading teams and keeping workplaces safe, I now bring that same discipline into Software Engineering. My goal is to build dependable and scalable solutions, guided by a detail‑oriented mindset to tackle complex challenges across industries.</p>
+        <section id="home" class="relative min-h-screen flex items-center grid-bg pt-16 overflow-hidden">
+            <div class="max-w-6xl mx-auto px-6 py-20 relative z-10 w-full">
+                <div class="max-w-3xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-px bg-[#00e5ff]"></div>
+                        <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">Hello, World</span></div>
+
+                    <h1 class="font-bold leading-none mb-4 text-[clamp(3rem,8vw,5.5rem)]">
+                        <span class="text-white">NASARUDDIN</span><br>
+                        <span class="text-cyan-400 drop-shadow-[0_0_22px_#00e5ff]">AHTAMIR</span></h1>
+                    
+                    <div class="font-bold text-sm mb-8 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs bg-[rgba(0,229,255,0.1)] border border-[rgba(0,229,255,0.3)] text-[#00e5ff] font-mono">  Software Engineer</span>
+                        <span class="px-3 py-1 text-xs bg-[rgba(255,107,43,0.1)] border border-[rgba(255,107,43,0.3)] text-[#ff6b2b] font-mono">  Web Developer</span>
+                        <span class="px-3 py-1 text-xs bg-[rgba(168,85,247,0.1)] border border-[rgba(168,85,247,0.3)] text-[#a855f7] font-mono">  OHS Expert</span>
+                        <span class="px-3 py-1 text-xs bg-[rgba(0,255,136,0.1)] border border-[rgba(0,255,136,0.3)] text-[#00ff88] font-mono">  OHS Management System Auditor</span></div>
+                        
+                    <p>Coming from a background in leading teams and keeping workplaces safe, I now bring that same discipline into Software Engineering. My goal is to build <span class="text-[#00e5ff]">dependable and scalable solutions</span>, guided by a detail‑oriented mindset to tackle complex challenges across industries.</p>
+
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="#projects" class="inline-flex items-center gap-2 w-55
+                         px-8 py-3 text-sm font-bold tracking-widest transition-all bg-gradient-to-br from-[#00e5ff] to-[#0072ff] text-black hover:shadow-[0_0_30px_rgba(0,229,255,0.5)]">VIEW PROJECTS →</a>
+
+                       <a href="#contact" class="inline-flex items-center gap-2 w-55 px-8 py-3 font-bold text-sm tracking-widest transition-all bg-transparent border border-[#00e5ff] text-[#00e5ff] hover:bg-[rgba(0,229,255,0.1)]">CONTACT ME</a></div>
+
+                </div>
+            </div>
         </section>
-        <section id="about">
-            <h2>
-                ABOUT             
-            </h2>
-                <p>
-                I'm Nasaruddin. With experience across diverse industries in Indonesia, I’ve developed a commitment to building software solutions that are reliable and high‑integrity. My journey — from strategic leadership as an Acting Branch Manager to the technical rigor of an SMK3 Auditor — has shaped <span style="color: darkorange;">a safety‑first</span> mindset that guides my work. I focus on scalable systems, thoughtful architecture, and workflow optimization, often integrating technology within occupational health and safety (OHS) frameworks. Driven by the challenge of turning manual processes into seamless digital solutions, I bring a blend of technical precision and operational insight to every project, confident that a foundation built on compliance and excellence is valuable in any forward‑thinking organization.
-                </p>
+
+        <section id="about" class="py-24 relative">
+            <div class="max-w-6xl mx-auto px-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-px bg-[#00e5ff]"></div>
+                        <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">About Me</span></div>
+    
+                        <h2 class="text-4xl font-bold">
+                            <span class="text-white">WHO</span>
+                            <span class="text-cyan-400 drop-shadow-[0_0_10px_#00e5ff]">AM I</span>
+                        </h2>     
+      
+                        <article class="space-y-6 text-justify text-white mt-22">
+                            <p class="text-base leading-relaxed">
+                                I'm <span class="text-cyan-400 font-semibold">Nasaruddin</span>. With experience across diverse industries in Indonesia, I've developed a commitment to building software solutions that are reliable and high‑integrity.
+                            </p>
+                            <p class="text-base leading-relaxed">
+                                My journey — from strategic leadership as an <span class="text-orange-500">Acting Branch Manager</span> to the technical rigor of an <span class="text-orange-500">SMK3 Auditor</span> — has shaped a <span class="text-orange-500 font-bold">safety‑first</span> mindset that guides my work.
+                            </p>
+                            <p class="text-base leading-relaxed">
+                                I focus on <span class="text-purple-500">scalable systems</span>, thoughtful architecture, and workflow optimization, often integrating technology within occupational health and safety (OHS) frameworks. Driven by the challenge of turning manual processes into seamless digital solutions.
+                            </p>
+                        </article>
         </section>
-        <section id="projects">
-            <h2>PROJECTS</h2>                                              
-            <article>
-                <h3>Safety Complain</h3>
-                    <figure>
-                        <img style="width: 200px;" src="images/SafetyComplaint.png" alt="Safety Complain">
-                        <figcaption>Safety Complain</figcaption>
-                    </figure>
-            </article>   
-            <article>
-                <h3>First Aid Record</h3>
-                    <figure>
-                        <img style="width: 200px;" src="images/PenggunaanP3K.png" alt="First Aid Record">
-                        <figcaption>First Aid Record</figcaption>                        
-                    </figure>
-            </article>
-            <article>
-                <h3>Permit To Work</h3>
-                    <figure>
-                        <img style="width: 200px;" src="images/PTW.png" alt="Permit To Work">
-                        <figcaption>Permit To Work</figcaption>
-                    </figure>
-            </article>
+        
+        <section id="projects" class="py-24 relative grid-bg">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-8 h-px bg-[#00e5ff]"></div>
+                    <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">PROJECTS</span>
+                </div>
+            
+                <h2 class="text-4xl font-bold mb-22">
+                    <span style="color:#e2f0f7">FEATURED </span>
+                    <span class="text-[#ff6b2b] drop-shadow-[0_0_10px_#ff6b2b]">WORK</span>
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="bg-[#0a1a24]/60 shadow-md p-4 flex flex-col items-center">
+                        <a href="https://tally.so/r/0Q7Lz9" target="_blank" rel="noopener noreferrer">
+                        <h3 class="text-lg font-semibold text-[#ffcf01] mb-2">Safety Complain</h3></a>
+                        <figure class="w-full h-full overflow-hidden">
+                            <a href="https://tally.so/r/0Q7Lz9" target="_blank" rel="noopener noreferrer">
+                            <img src="images/SafetyComplaint.png" alt="Safety Complain" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105 hover:rotate-0"/></a>
+                        </figure>
+                    </article>                    
+            
+                    <article class="bg-[#0a1a24]/60 shadow-md p-4 flex flex-col items-center">
+                        <a href="https://naz-ahtamir.github.io/Lomba-Lari/shake-race-player/" target="_blank" rel="noopener noreferrer">
+                        <h3 class="text-lg font-semibold text-[#00cfff] mb-2">Shake Run</h3></a>
+                        <figure class="w-full h-full overflow-hidden">
+                            <a href="https://naz-ahtamir.github.io/Lomba-Lari/shake-race-player.html" target="_blank" rel="noopener noreferrer">
+                            <img src="images/ShakeRun.png" alt="Shake Run" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105 hover:rotate-0"/></a>
+                        </figure>
+                    </article>
+
+                    <article class="bg-[#0a1a24]/60 shadow-md p-4 flex flex-col items-center">
+                        <a href="https://tally.so/r/dWEXDD" target="_blank" rel="noopener noreferrer">
+                        <h3 class="text-lg font-semibold text-[#f4f4f4] mb-2">Permit To Work</h3></a>
+                        <figure class="w-full h-full overflow-hidden">
+                            <a href="https://tally.so/r/dWEXDD" target="_blank" rel="noopener noreferrer">
+                            <img src="images/PTW.png" alt="Permit To Work" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105 hover:rotate-0"/></a>
+                        </figure>
+                    </article>
+                </div>
+            </div>
         </section>
-        <section id="contact">
-            <h2>CONTACT</h2>                 
-                <h3>Open to internship opportunities, freelance projects, and collaborations.</h3>          
-                <p style="margin: 0;line-height: 1.5;"><a href="mailto:nasaruddin.ahtamir@gmail.com">nasaruddin.ahtamir@gmail.com</a></p>
-                <p style="margin: 0;line-height: 1.5;"><a href="https://id.linkedin.com/in/nasaruddin-st-86a593258">linkedIn.com/in/nasaruddin-st-86a593258</a></p>
-                <p style="margin: 0;line-height: 1.5;"><a href="https://github.com/naz-ahtamir">github.com/naz-ahtamir</a></p>            
-            <h3>Drop a message — I read everything.</h3>    
-            <form>
-                <label for="name">Name</label>            
-                    <input type="text" name="name" id="name" placeholder="Your Full Name" required>
-                <label for="email">Email</label>            
-                    <input type="email" name="email" id="email" placeholder="Your@email.com" required>
-                <label for="message">Message</label>            
-                    <textarea name="message" id="message" rows="4" cols="22" placeholder="Tell me about your project"></textarea>                
-                <button type="reset">RESET</button>
-                <button type="submit">SEND MESSAGE</button>
-            </form>
-        </section>        
+
+        
+        <section id="contact" class="py-24 relative">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-8 h-px bg-[#00e5ff]"></div>
+                    <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">CONTACT</span>
+                </div>
+
+                <h2 class="text-4xl font-bold">
+                    <span class="text-white">GET IN</span>
+                    <span class="text-cyan-400 drop-shadow-[0_0_10px_#00e5ff]">TOUCH</span>
+                </h2>
+            
+                <div class="grid lg:grid-cols-2 gap-12 mt-22">                    
+                    <div class="space-y-6">
+                        <div class="p-6 bg-[#0a1520] border border-[#1a3a4a] text-[#e2f0f7] shadow-md">
+                            <p class="font-bold text-lg mb-2">Open to Opportunities</p>
+                            <p class="text-sm leading-relaxed">
+                            Open to internship opportunities, freelance projects, and collaborations. Drop a message — I read everything.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <a href="mailto:nasaruddin.ahtamir@gmail.com" class="flex items-center gap-4 p-4 bg-[#0a1520] border border-[#1a3a4a] transition-colors hover:border-[#00e5ff]">
+                                <div class="w-8 h-8 flex items-center justify-center flex-shrink-0 bg-[rgba(0,229,255,0.15)]">
+                                    <span style="color:#00e5ff;font-size:14px">✉</span>
+                                </div>
+                                <div>
+                                    <p class="font-mono text-xs mb-0.5 text-[rgba(226,240,247,0.4)]">EMAIL</p>
+                                    <p class="text-sm text-[#00e5ff]">nasaruddin.ahtamir@gmail.com</p>
+                                </div>
+                            </a>
+
+                            <a href="https://id.linkedin.com/in/nasaruddin-st-86a593258" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 bg-[#0a1520] border border-[#1a3a4a] transition-colors hover:border-[#0072ff]">
+                                <div class="w-8 h-8 flex items-center justify-center flex-shrink-0 bg-[rgba(0,114,255,0.15)]">
+                                    <span class="text-[#0072ff] text-sm">in</span>
+                                </div>
+                                <div>
+                                    <p class="font-mono text-xs mb-0.5 text-[rgba(226,240,247,0.4)]">LINKEDIN</p>
+                                    <p class="text-sm text-[#0072ff]">linkedin.com/in/nasaruddin-st</p>
+                                </div>
+                            </a>
+
+                            <a href="https://github.com/naz-ahtamir" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 bg-[#0a1520] border border-[#1a3a4a] transition-colors hover:border-[#a855f7]">
+                                <div class="w-8 h-8 flex items-center justify-center flex-shrink-0 bg-[rgba(168,85,247,0.15)]">
+                                    <span class="text-[#a855f7] text-sm">⌥</span>
+                                </div>
+                                <div>
+                                    <p class="font-mono text-xs mb-0.5 text-[rgba(226,240,247,0.4)]">GITHUB</p>
+                                    <p class="text-sm text-[#a855f7]">github.com/naz-ahtamir</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>               
+            
+
+                    <!-- Contact form -->
+                    <div class="p-6 bg-[#0a1520] border border-[#1a3a4a] shadow-md">
+                        <p class="text-[#e2f0f7] font-bold text-lg mb-6">Send a Message</p>  
+
+                        <form class="space-y-4" id="contact-form">                                              
+                            <label class="font-mono text-xs block mb-2 text-[rgba(226,240,247,0.5)]">NAME <span class="text-[#ff6b2b]">*</span></label>
+                                <input type="text" name="name" placeholder="Your Full Name" required class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors" />                                                  
+                                                
+                            <label class="font-mono text-xs block mt-4 mb-2 text-[rgba(226,240,247,0.5)]">EMAIL <span class="text-[#ff6b2b]">*</span></label>
+                                <input type="email" name="email" placeholder="your@email.com" required class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors" />
+                            
+                            <label class="font-mono text-xs block mt-4 mb-2 text-[rgba(226,240,247,0.5)]">MESSAGE</label>
+                                <textarea name="message" rows="4" placeholder="Tell me about your project..." class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors resize-y"></textarea>
+                            
+
+                            <div class="flex gap-3 pt-2">
+                                <button type="reset"
+                                    class="flex-1 py-3 font-mono text-xs font-bold tracking-widest border border-[#1a3a4a] text-[rgba(226,240,247,0.5)] transition-colors hover:border-[#ff6b2b] hover:text-[#ff6b2b]">
+                                    RESET
+                                </button>
+
+                                <button type="submit"
+                                    class="flex-2 px-8 py-3 font-mono text-xs font-bold tracking-widest transition-shadow bg-gradient-to-br from-[#00e5ff] to-[#0072ff] text-black hover:shadow-[0_0_20px_rgba(0,229,255,0.4)]">
+                                    SEND MESSAGE →
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <br>
-    <br>
-    <footer style="font-size: smaller;">
-        <p class="footer-copy">© 2026 <span style="color: darkorange;">Nasaruddin</span> All rights reserved.</p>
-        <p class="footer-right">Built with HTML & CSS</p>
+    
+    <footer class="py-8 border-t border-[#1a3a4a] bg-[#050a0e]">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="font-mono text-xs text-[rgba(226,240,247,0.4)]">
+            © 2026 <span class="text-[#ff6b2b]">Nasaruddin</span> · All rights reserved.</p>
+            <p class="font-mono text-xs text-[rgba(226,240,247,0.4)]">
+            Built with <span class="text-[#00e5ff]">HTML</span> · <span class="text-[#00e5ff]">Tailwind CSS</span></p>
+        </div>
     </footer>
+
+
 </body>
 </html>

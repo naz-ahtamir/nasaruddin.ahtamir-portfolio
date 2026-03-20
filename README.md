@@ -1,39 +1,40 @@
-# Nasaruddin Portfolio
+# 🚀 Nasaruddin Portfolio
 
-A personal portfolio website built with **HTML & CSS**, showcasing my journey as a **Software Engineer, Web Developer, and Occupational Health & Safety (OHS) Specialist**. This project highlights my professional background, technical expertise, and selected works related to safety systems and digital solutions.
+A modern, high-performance personal portfolio website built with a focus on professional integrity and technical precision. This project showcases my dual expertise as a **Software Engineer** and an **Occupational Health & Safety (OHS) Specialist**.
 
 ---
 
 ## ✨ Features
-- **Homepage (Hero Section):** Introduction and personal branding statement.
-- **About Section:** Professional background, leadership experience, and niche expertise in OHS and SMK3 auditing.
-- **Projects Section:**  
-  - *Safety Complaint* — digital interface for reporting workplace safety issues.  
-  - *First Aid Record* — form-based system for documenting first aid usage.  
-  - *Permit To Work* — workflow for managing safe work permits.  
-- **Contact Section:** Links to email, LinkedIn, and GitHub for collaboration opportunities.
-- **Footer:** Copyright and build information.
+- **Modern Cyberpunk Aesthetic:** Dark-themed UI with neon accents and glassmorphism.
+- **Responsive Navigation:** Fixed navigation bar with smooth-scroll integration.
+- **Dynamic Hero Section:** Clear personal branding with a multi-disciplinary professional summary.
+- **Interactive Project Showcase:** Hover-animated cards featuring OHS-tech solutions:
+  - *Safety Complain* — Digital workplace hazard reporting.
+  - *Shake Run* — An interactive web-based game.
+  - *Permit To Work* — Digitalized safe work permit management.
+- **Integrated Contact System:** Professional layout for inquiries, linked directly to social/professional platforms.
 
 ---
 
 ## 🛠️ Tech Stack
-- **HTML5** — semantic structure and content.  
-- **CSS3** — styling and layout.  
-- **Google Fonts (Kumbh Sans)** — clean and modern typography.  
+- **HTML5** — Semantic structure for accessibility and SEO.
+- **Tailwind CSS v4** — Next-generation utility-first styling using the latest `@theme` configuration.
+- **Google Fonts:**
+  - *Space Grotesk* — For clean, modern headings.
+  - *JetBrains Mono* — For technical data and navigation elements.
 
 ---
 
 ## 📂 Project Structure
-```
+```text
 nasaruddin-portfolio/
-├── index.html        # Main portfolio page
-├── images/           # Project screenshots
+├── index.html          # Main application (HTML + Tailwind Config)
+├── images/             # Visual assets
 │   ├── SafetyComplaint.png
-│   ├── PenggunaanP3K.png
+│   ├── ShakeRun.png
 │   └── PTW.png
-└── README.md         # Documentation
+└── README.md           # Documentation
 ```
----
 
 ## 🚀 Getting Started
 1. Clone the repository:
@@ -42,7 +43,8 @@ nasaruddin-portfolio/
 2. Navigate to the project folder:
    ```bash 
    cd naz-portfolio
-3. Open index.html in your browser.
+3. Run the project:
+   Simply open index.html in any modern web browser. No build step is required as it utilizes the Tailwind browser-led runtime.Open index.html in your browser.
 
 ---
 
