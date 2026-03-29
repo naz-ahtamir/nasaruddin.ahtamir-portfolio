@@ -11,43 +11,74 @@
             --font-grotesk: 'Space Grotesk', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
+
+        @keyframes typing7 {
+            from {width: 0;}
+            to {width: 9ch;}
+        }        
+
+        @keyframes typing10 {
+            from {width: 0;}
+            to {width: 20ch;}
+        }
+
+        @keyframes blink {
+            50% {border-color: transparent;}
+        }
+
+        .animate-typing7 {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #00e5ff;
+            animation: typing7 3s steps(7, end) infinite, blink .7s step-end infinite;
+        }
+
+        .animate-typing10 {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid white;
+            animation: typing10 4s steps(13, end) infinite, blink .7s step-end infinite;
+        }
+
     </style>
 </head>
-<body class="font-grotesk bg-black text-white antialiased relative">
-    <nav class="fixed top-0 left-0 right-0 z-50 
-            bg-gradient-to-r from-black via-[#0a1a24] to-[#00e5ff]/20 
+<body class="font-grotesk bg-black text-white antialiased relative            
+            bg-cover bg-center min-h-screen">
+    <nav class="fixed top-0 right-0 left-0 justify-end z-50            
             backdrop-blur-md border-b border-[#00e5ff] 
             transition-all duration-300 
-            hover:from-[#001f33] hover:via-[#00334d] hover:to-[#00e5ff]/40">
-        <div class="max-w-7xl mx-auto flex justify-end items-center px-6 py-3 gap-6">
+            hover:from-[#001f33] hover:via-[#00334d] hover:to-[#00e5ff]/40
+            hidden md:flex">
+        <div class="max-w-7xl ml-auto flex justify-end items-center px-6 py-3 gap-6">
                 <ul class="desktop-nav flex items-center gap-8">
-                        <li><a href="#home" class="relative text-xs tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
+                        <li><a href="#home" class="relative text-sm tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
                             transition-colors duration-300 
                             hover:text-[#00e5ff] hover:after:w-full font-mono">HOME</a></li>
-
-                            <li><a href="#about" class="relative text-xs tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
+                        <li><a href="#about" class="relative text-sm tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
                             transition-colors duration-300 
                             hover:text-[#00e5ff] hover:after:w-full font-mono">ABOUT</a></li>
-                        <li><a href="#projects" class="relative text-xs tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
+                        <li><a href="#projects" class="relative text-sm tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
                             transition-colors duration-300 
                             hover:text-[#00e5ff] hover:after:w-full font-mono">PROJECTS</a></li>
-                        <li><a href="#contact" class="relative text-xs tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
+                        <li><a href="#contact" class="relative text-sm tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
                             transition-colors duration-300 
                             hover:text-[#00e5ff] hover:after:w-full font-mono">CONTACT</a></li>
                     </ul>
     </nav>
     
     <main>
-        <section id="home" class="relative min-h-screen flex items-center grid-bg pt-16 overflow-hidden">
+        <section id="home" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
             <div class="max-w-6xl mx-auto px-6 py-20 relative z-10 w-full">
-                <div class="max-w-3xl">
+                <div>
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-8 h-px bg-[#00e5ff]"></div>
-                        <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">Hello, World</span></div>
+                        <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold animate-typing10">Hello, World</span></div>
 
                     <h1 class="font-bold leading-none mb-4 text-[clamp(3rem,8vw,5.5rem)]">
                         <span class="text-white">NASARUDDIN</span><br>
-                        <span class="text-cyan-400 drop-shadow-[0_0_22px_#00e5ff]">AHTAMIR</span></h1>
+                        <span class="animate-typing7 inline-block text-cyan-400 drop-shadow-[0_0_22px_#00e5ff]">AHTAMIR</span></h1>
                     
                     <div class="font-bold text-sm mb-8 flex flex-wrap gap-2">
                         <span class="px-3 py-1 text-xs bg-[rgba(0,229,255,0.1)] border border-[rgba(0,229,255,0.3)] text-[#00e5ff] font-mono">  Software Engineer</span>
@@ -55,7 +86,7 @@
                         <span class="px-3 py-1 text-xs bg-[rgba(168,85,247,0.1)] border border-[rgba(168,85,247,0.3)] text-[#a855f7] font-mono">  OHS Expert</span>
                         <span class="px-3 py-1 text-xs bg-[rgba(0,255,136,0.1)] border border-[rgba(0,255,136,0.3)] text-[#00ff88] font-mono">  OHS Management System Auditor</span></div>
                         
-                    <p>Coming from a background in leading teams and keeping workplaces safe, I now bring that same discipline into Software Engineering. My goal is to build <span class="text-[#00e5ff]">dependable and scalable solutions</span>, guided by a detail‑oriented mindset to tackle complex challenges across industries.</p>
+                    <p class="text-justify">Coming from a background in leading teams and keeping workplaces safe, I now bring that same discipline into Software Engineering. My goal is to build <span class="text-[#00e5ff]">dependable and scalable solutions</span>, guided by a detail‑oriented mindset to tackle complex challenges across industries.</p>
 
                     <div class="flex flex-wrap gap-4 mt-8">
                         <a href="#projects" class="inline-flex items-center gap-2 w-55
@@ -91,7 +122,7 @@
                         </article>
         </section>
         
-        <section id="projects" class="py-24 relative grid-bg">
+        <section id="projects" class="py-24 relative">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="flex items-center gap-3 mb-3">
                     <div class="w-8 h-px bg-[#00e5ff]"></div>
