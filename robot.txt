@@ -1,0 +1,6 @@
+# Izinkan semua crawler mengakses seluruh halaman
+User-agent: *
+Allow: /
+
+# Tautkan ke sitemap agar crawler tahu daftar halaman Anda
+Sitemap: https://naz-ahtamir.github.io/nasaruddin.ahtamir-portfolio/sitemap.xml
