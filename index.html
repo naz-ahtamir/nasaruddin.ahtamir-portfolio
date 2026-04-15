@@ -106,32 +106,83 @@
             text-decoration: none;
         }
 
+        /* Crosshair cursor - ringan dan tajam */
+        .cyber-crosshair {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.1s ease, height 0.1s ease;
+        }
+
+        .cyber-crosshair::before,
+        .cyber-crosshair::after {
+            content: '';
+            position: absolute;
+            background: #00e5ff;
+            box-shadow: 0 0 4px #00e5ff;
+        }
+
+        .cyber-crosshair::before {
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            transform: translateY(-50%);
+        }
+
+        .cyber-crosshair::after {
+            top: 0;
+            left: 50%;
+            width: 1.5px;
+            height: 100%;
+            transform: translateX(-50%);
+        }
+
+        .cyber-crosshair.hover {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Sembunyikan kursor default di desktop */
+        body {
+            cursor: none;
+        }
+        @media (max-width: 768px) {
+            body {
+                cursor: auto;
+            }
+            .cyber-crosshair {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="font-grotesk text-white antialiased">
     <div class="flex flex-col md:flex-row max-w-7xl mx-auto">
     <!-- SIDEBAR KIRI: FOTO STICKY, LATAR MERAH SETINGGI LAYAR -->
-    <aside class="md:w-[35%] w-full h-screen sticky top-0 flex flex-col bg-[#08ddf4] z-20">
-    <!-- NAVBAR DI ATAS FOTO, TANPA BACKGROUND, TEKS TENGAH -->
-    <nav class="w-full py-4 px-6 bg-transparent z-30">
-        <ul class="flex justify-center gap-6">
-            <li><a href="#home" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">HOME</a></li>
-            <li><a href="#about" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">ABOUT</a></li>
-            <li><a href="#projects" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">PROJECTS</a></li>
-            <li><a href="#contact" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">CONTACT</a></li>
-        </ul>
-    </nav>
-    
-    <!-- FOTO DI BAWAH NAVBAR (memenuhi sisa ruang) -->
-    <div class="flex-1 relative">
-        <img src="images/pro.jpg" alt="Nasaruddin Ahtamir"
-             class="absolute inset-0 w-full h-full object-cover">
-    </div>
-</aside>
+    <aside class="md:w-[35%] w-full md:h-screen md:sticky md:top-0 flex flex-col bg-black/20 md:bg-black/30 backdrop-blur-md z-20">
+        <!-- NAVBAR DI ATAS FOTO, TANPA BACKGROUND, TEKS TENGAH -->
+        <nav class="w-full py-4 px-6 bg-[#08ddf4] md:bg-transparent sticky top-0 z-30 font-bold">
+            <ul class="flex justify-center gap-6">
+                <li><a href="#home" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">HOME</a></li>
+                <li><a href="#about" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">ABOUT</a></li>
+                <li><a href="#projects" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">PROJECTS</a></li>
+                <li><a href="#contact" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">CONTACT</a></li>
+            </ul>
+        </nav>
+        
+        <!-- FOTO DI BAWAH NAVBAR (memenuhi sisa ruang) -->
+        <div class="w-full">
+            <img src="images/pro.jpg" alt="Nasaruddin Ahtamir"
+                class="w-full h-auto md:absolute md:inset-0 md:h-full md:object-cover">
+        </div>
+    </aside>
     
     <!-- KONTEN UTAMA DI KANAN (dalam 1 box) -->
     <main class="md:w-[65%] w-full bg-transparent"> 
-
         <section id="home" class="min-h-screen flex items-center pt-16 overflow-hidden">
             <div class="px-6 py-20 relative z-10 w-full">
                 <div class="flex items-center gap-3 mb-6">
@@ -325,7 +376,7 @@
         </section>
     
         <footer class="py-8 border-t border-[#1a3a4a] bg-[#050a0e]">
-            <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
                 <p class="font-mono text-xs text-[rgba(226,240,247,0.4)]">
                 © 2026 <span class="text-[#ff6b2b]">Nasaruddin</span> · All rights reserved.</p>
                 <p class="font-mono text-xs text-[rgba(226,240,247,0.4)]">
@@ -425,6 +476,36 @@
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
   });
+</script>
+
+<script>
+// Script crosshair - ringan
+(function() {
+    const cross = document.createElement('div');
+    cross.className = 'cyber-crosshair';
+    document.body.appendChild(cross);
+    
+    let mouseX = 0, mouseY = 0;
+    let rafId = null;
+    
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (rafId === null) {
+            rafId = requestAnimationFrame(function update() {
+                cross.style.left = mouseX + 'px';
+                cross.style.top = mouseY + 'px';
+                rafId = null;
+            });
+        }
+    });
+    
+    const interactive = document.querySelectorAll('a, button, [role="button"]');
+    interactive.forEach(el => {
+        el.addEventListener('mouseenter', () => cross.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cross.classList.remove('hover'));
+    });
+})();
 </script>
 
 </body>
