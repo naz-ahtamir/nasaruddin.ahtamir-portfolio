@@ -56,58 +56,102 @@
             animation: typing10 4s steps(13, end) infinite, blink .7s step-end infinite;
         }
 
+        /* additional smooth scrolling & better readability */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* custom scrollbar agar tetap elegan */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050a0e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00e5ff;
+            border-radius: 8px;
+        }
+
+         /* Tambahan untuk memastikan konten di atas canvas Three.js */
+        .relative-z {
+            position: relative;
+            z-index: 10;
+        }
+        canvas.webgl {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -5;
+            pointer-events: none;
+        }
+        /* Styling untuk info Three.js (opsional) */
+        #info {
+            position: fixed;
+            bottom: 12px;
+            right: 12px;
+            z-index: 20;
+            background: rgba(0,0,0,0.5);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 10px;
+            color: #aaa;
+            pointer-events: none;
+        }
+        #info a {
+            color: #00e5ff;
+            text-decoration: none;
+        }
+
     </style>
 </head>
-<body class="font-grotesk bg-black text-white antialiased relative            
-            bg-cover bg-center min-h-screen">
-    <nav class="fixed top-0 right-0 left-0 justify-end z-50            
-            backdrop-blur-md border-b border-[#00e5ff] 
-            transition-all duration-300 
-            hover:from-[#001f33] hover:via-[#00334d] hover:to-[#00e5ff]/40
-            hidden md:flex">
-        <div class="max-w-7xl ml-auto flex justify-end items-center px-6 py-3 gap-6">
-                <ul class="desktop-nav flex items-center gap-8">
-                        <li><a href="#home" class="relative text-sm tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
-                            transition-colors duration-300 
-                            hover:text-[#00e5ff] hover:after:w-full font-mono">HOME</a></li>
-                        <li><a href="#about" class="relative text-sm tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
-                            transition-colors duration-300 
-                            hover:text-[#00e5ff] hover:after:w-full font-mono">ABOUT</a></li>
-                        <li><a href="#projects" class="relative text-sm tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
-                            transition-colors duration-300 
-                            hover:text-[#00e5ff] hover:after:w-full font-mono">PROJECTS</a></li>
-                        <li><a href="#contact" class="relative text-sm tracking-[0.15em] text-[rgba(226,240,247,0.5)] 
-                            transition-colors duration-300 
-                            hover:text-[#00e5ff] hover:after:w-full font-mono">CONTACT</a></li>
-                    </ul>
+<body class="font-grotesk text-white antialiased">
+    <div class="flex flex-col md:flex-row max-w-7xl mx-auto">
+    <!-- SIDEBAR KIRI: FOTO STICKY, LATAR MERAH SETINGGI LAYAR -->
+    <aside class="md:w-[35%] w-full h-screen sticky top-0 flex flex-col bg-[#08ddf4] z-20">
+    <!-- NAVBAR DI ATAS FOTO, TANPA BACKGROUND, TEKS TENGAH -->
+    <nav class="w-full py-4 px-6 bg-transparent z-30">
+        <ul class="flex justify-center gap-6">
+            <li><a href="#home" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">HOME</a></li>
+            <li><a href="#about" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">ABOUT</a></li>
+            <li><a href="#projects" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">PROJECTS</a></li>
+            <li><a href="#contact" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">CONTACT</a></li>
+        </ul>
     </nav>
     
-    <main>
-        <section id="home" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
-            <div class="max-w-6xl mx-auto px-6 py-20 relative z-10 w-full">
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-8 h-px bg-[#00e5ff]"></div>
-                        <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold animate-typing10">Hello, World</span></div>
+    <!-- FOTO DI BAWAH NAVBAR (memenuhi sisa ruang) -->
+    <div class="flex-1 relative">
+        <img src="images/pro.jpg" alt="Nasaruddin Ahtamir"
+             class="absolute inset-0 w-full h-full object-cover">
+    </div>
+</aside>
+    
+    <!-- KONTEN UTAMA DI KANAN (dalam 1 box) -->
+    <main class="md:w-[65%] w-full bg-transparent"> 
 
-                    <h1 class="font-bold leading-none mb-4 text-[clamp(3rem,8vw,5.5rem)]">
-                        <span class="text-white">NASARUDDIN</span><br>
-                        <span class="animate-typing7 inline-block text-cyan-400 drop-shadow-[0_0_22px_#00e5ff]">AHTAMIR</span></h1>
-                    
-                    <div class="font-bold text-sm mb-8 flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs bg-[rgba(0,229,255,0.1)] border border-[rgba(0,229,255,0.3)] text-[#00e5ff] font-mono">  Software Engineer</span>
-                        <span class="px-3 py-1 text-xs bg-[rgba(255,107,43,0.1)] border border-[rgba(255,107,43,0.3)] text-[#ff6b2b] font-mono">  Web Developer</span>
-                        <span class="px-3 py-1 text-xs bg-[rgba(168,85,247,0.1)] border border-[rgba(168,85,247,0.3)] text-[#a855f7] font-mono">  OHS Expert</span>
-                        <span class="px-3 py-1 text-xs bg-[rgba(0,255,136,0.1)] border border-[rgba(0,255,136,0.3)] text-[#00ff88] font-mono">  OHS Management System Auditor</span></div>
-                        
-                    <p class="text-justify">Coming from a background in leading teams and keeping workplaces safe, I now bring that same discipline into Software Engineering. My goal is to build <span class="text-[#00e5ff]">dependable and scalable solutions</span>, guided by a detail‑oriented mindset to tackle complex challenges across industries.</p>
-
-                    <div class="flex flex-wrap gap-4 mt-8">
-                        <a href="#projects" class="inline-flex items-center gap-2 w-55
-                         px-8 py-3 text-sm font-bold tracking-widest transition-all bg-gradient-to-br from-[#00e5ff] to-[#0072ff] text-black hover:shadow-[0_0_30px_rgba(0,229,255,0.5)]">VIEW PROJECTS →</a>
-
-                       <a href="#contact" class="inline-flex items-center gap-2 w-55 px-8 py-3 font-bold text-sm tracking-widest transition-all bg-transparent border border-[#00e5ff] text-[#00e5ff] hover:bg-[rgba(0,229,255,0.1)]">CONTACT ME</a></div>
-
+        <section id="home" class="min-h-screen flex items-center pt-16 overflow-hidden">
+            <div class="px-6 py-20 relative z-10 w-full">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-px bg-[#00e5ff]"></div>
+                        <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold animate-typing10">Hello, World</span>
+                </div>
+                <h1 class="font-bold leading-none mb-4 text-[clamp(3rem,8vw,5.5rem)]">
+                    <span class="text-white">NASARUDDIN</span><br>
+                    <span class="animate-typing7 inline-block text-cyan-400 drop-shadow-[0_0_22px_#00e5ff]">AHTAMIR</span>
+                </h1>
+                <div class="font-bold text-sm mb-8 flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs bg-[rgba(0,229,255,0.1)] border border-[rgba(0,229,255,0.3)] text-[#00e5ff] font-mono">Software Engineer</span>
+                    <span class="px-3 py-1 text-xs bg-[rgba(255,107,43,0.1)] border border-[rgba(255,107,43,0.3)] text-[#ff6b2b] font-mono">Web Developer</span>
+                    <span class="px-3 py-1 text-xs bg-[rgba(168,85,247,0.1)] border border-[rgba(168,85,247,0.3)] text-[#a855f7] font-mono">OHS Expert</span>
+                    <span class="px-3 py-1 text-xs bg-[rgba(0,255,136,0.1)] border border-[rgba(0,255,136,0.3)] text-[#00ff88] font-mono">OHS Management System Auditor</span>
+                </div>
+                <p class="text-justify">Coming from a background in leading teams and keeping workplaces safe, I now bring that same discipline into Software Engineering. My goal is to build <span class="text-[#00e5ff]">dependable and scalable solutions</span>, guided by a detail‑oriented mindset to tackle complex challenges across industries.</p>
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <a href="#projects" class="inline-flex items-center gap-2 px-8 py-3 text-sm font-bold tracking-widest transition-all bg-gradient-to-br from-[#00e5ff] to-[#0072ff] text-black hover:shadow-[0_0_30px_rgba(0,229,255,0.5)]">VIEW PROJECTS →</a>
+                    <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3 font-bold text-sm tracking-widest transition-all bg-transparent border border-[#00e5ff] text-[#00e5ff] hover:bg-[rgba(0,229,255,0.1)]">CONTACT ME</a>
                 </div>
             </div>
         </section>
@@ -179,8 +223,8 @@
                     </figure>                    
                 </article>   
                 
-                <article class="grid md:grid-cols-2 gap-6 mb-22 flex justify-start">                    
-                    <figure class="mb-8 md:mb-0 relative rounded-3xl">
+                <article class="grid md:grid-cols-2 gap-6 mb-22">                    
+                    <figure class="mb-8 md:mb-0 relative overflow-hidden flex justify-start">
                         <a href="https://tally.so/r/dWEXDD" target="_blank" rel="noopener noreferrer">    
                         <img alt="Project Safety Complain" class="w-full h-auto cursor-pointer transition-transform duration-300 hover:scale-88 max-h-[80vh] object-contain items-left rounded-3xl" src="images/PTW.png"/></a>
                     </figure>
@@ -279,17 +323,109 @@
                 </div>
             </div>
         </section>
+    
+        <footer class="py-8 border-t border-[#1a3a4a] bg-[#050a0e]">
+            <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="font-mono text-xs text-[rgba(226,240,247,0.4)]">
+                © 2026 <span class="text-[#ff6b2b]">Nasaruddin</span> · All rights reserved.</p>
+                <p class="font-mono text-xs text-[rgba(226,240,247,0.4)]">
+                Built with <span class="text-[#00e5ff]">HTML</span> · <span class="text-[#00e5ff]">Tailwind CSS</span></p>
+            </div>
+        </footer>
     </main>
     
-    <footer class="py-8 border-t border-[#1a3a4a] bg-[#050a0e]">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="font-mono text-xs text-[rgba(226,240,247,0.4)]">
-            © 2026 <span class="text-[#ff6b2b]">Nasaruddin</span> · All rights reserved.</p>
-            <p class="font-mono text-xs text-[rgba(226,240,247,0.4)]">
-            Built with <span class="text-[#00e5ff]">HTML</span> · <span class="text-[#00e5ff]">Tailwind CSS</span></p>
-        </div>
-    </footer>
+    
 
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+    }
+  }
+</script>
+
+<script type="module">
+  import * as THREE from 'three';
+
+  // Setup canvas di belakang konten
+  const canvas = document.createElement('canvas');
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  canvas.style.zIndex = '-5';
+  canvas.style.pointerEvents = 'none';
+  document.body.prepend(canvas);
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x03060c); // hitam kebiruan gelap
+
+  const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.set(0, 0, 12);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: false });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+
+  // --- Partikel bintang halus (putih kebiruan) ---
+  const particleCount = 1000;
+  const positions = new Float32Array(particleCount * 3);
+  const colors = new Float32Array(particleCount * 3);
+
+  for (let i = 0; i < particleCount; i++) {
+    // Sebar dalam volume kotak 3D
+    positions[i*3] = (Math.random() - 0.5) * 45;
+    positions[i*3+1] = (Math.random() - 0.5) * 25;
+    positions[i*3+2] = (Math.random() - 0.5) * 20 - 10;
+    
+    // Warna putih kebiruan dengan variasi intensitas
+    const intensity = 0.4 + Math.random() * 0.6;
+    colors[i*3] = 0.7 * intensity;   // R
+    colors[i*3+1] = 0.8 * intensity; // G
+    colors[i*3+2] = 1.0 * intensity; // B
+  }
+
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+  const material = new THREE.PointsMaterial({ size: 0.08, vertexColors: true, transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending });
+  const stars = new THREE.Points(geometry, material);
+  scene.add(stars);
+
+  // --- Interaksi mouse (parallax halus pada kamera) ---
+  let targetX = 0, targetY = 0;
+  window.addEventListener('mousemove', (e) => {
+    targetX = (e.clientX / window.innerWidth) * 1.2 - 0.6;
+    targetY = (e.clientY / window.innerHeight) * 0.8 - 0.4;
+  });
+
+  let time = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    time += 0.003;
+    
+    // Rotasi bintang sangat lambat
+    stars.rotation.y = time * 0.03;
+    stars.rotation.x = Math.sin(time * 0.1) * 0.05;
+    
+    // Gerakan kamera mengikuti mouse
+    camera.position.x += (targetX - camera.position.x) * 0.05;
+    camera.position.y += (-targetY - camera.position.y) * 0.05;
+    camera.lookAt(0, 0, 0);
+    
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // --- Responsif ---
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+</script>
 
 </body>
 </html>
