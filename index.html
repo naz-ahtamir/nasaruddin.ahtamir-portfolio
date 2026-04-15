@@ -161,9 +161,9 @@
     </style>
 </head>
 <body class="font-grotesk text-white antialiased">
-    <div class="flex flex-col md:flex-row max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row">
     <!-- SIDEBAR KIRI: FOTO STICKY, LATAR MERAH SETINGGI LAYAR -->
-    <aside class="md:w-[35%] w-full md:h-screen md:sticky md:top-0 flex flex-col bg-black/20 md:bg-black/30 backdrop-blur-md z-20">
+    <aside class="w-full md:flex-1 md:sticky md:top-0 md:h-screen flex flex-col bg-black/20 md:bg-black/30 backdrop-blur-md z-20" style="flex-basis: 35%;">
         <!-- NAVBAR DI ATAS FOTO, TANPA BACKGROUND, TEKS TENGAH -->
         <nav class="w-full py-4 px-6 bg-[#08ddf4] md:bg-transparent sticky top-0 z-30 font-bold">
             <ul class="flex justify-center gap-6">
@@ -182,7 +182,7 @@
     </aside>
     
     <!-- KONTEN UTAMA DI KANAN (dalam 1 box) -->
-    <main class="md:w-[65%] w-full bg-transparent"> 
+    <main class="w-full md:flex-1" style="flex-basis: 65%;"> 
         <section id="home" class="min-h-screen flex items-center pt-16 overflow-hidden">
             <div class="px-6 py-20 relative z-10 w-full">
                 <div class="flex items-center gap-3 mb-6">
@@ -208,7 +208,7 @@
         </section>
 
         <section id="about" class="py-24 relative">
-            <div class="max-w-6xl mx-auto px-6">
+            <div class="px-6 w-full">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-8 h-px bg-[#00e5ff]"></div>
                         <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">About Me</span></div>
@@ -232,7 +232,7 @@
         </section>
         
         <section id="projects" class="py-24 relative">
-            <div class="max-w-6xl mx-auto px-6">
+            <div class="px-6 w-full">
                 <div class="flex items-center gap-3 mb-3">
                     <div class="w-8 h-px bg-[#00e5ff]"></div>
                     <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">PROJECTS</span>
@@ -243,55 +243,34 @@
                     <span class="text-[#ff6b2b] drop-shadow-[0_0_10px_#ff6b2b]">WORK</span>
                 </h2>
 
-                <article class="grid md:grid-cols-2 gap-6 mb-22">                    
-                    <figure class="mb-8 md:mb-0 relative overflow-hidden flex justify-start">
-                        <a href="https://tally.so/r/0Q7Lz9" target="_blank" rel="noopener noreferrer">    
-                        <img alt="Project Safety Complain" class="w-full h-auto cursor-pointer transition-transform duration-300 hover:scale-88 max-h-[70vh] object-contain items-left rounded-3xl" src="images/SafetyComplaint.png"/></a>
-                    </figure>
-                        
-                    <div class="ml-0 md:ml-8 flex flex-col items-start justify-center">
-                        <span class="text-xs tracking-widest uppercase">Industrial Compliance Tool</span>
+                <article class="grid md:grid-cols-2 gap-6 mb-22">   
+                    <div class="ml-0 md:ml-8 flex flex-col ">
+                        <span class="text-xs tracking-widest uppercase ml-99">Industrial Compliance Tool</span>
                         <a href="https://tally.so/r/0Q7Lz9" target="_blank" rel="noopener noreferrer">
-                        <h3 class="text-[#ffcf01] text-3xl font-bold uppercase">Safety Complain</h3></a>
-                        <p class="mb-8 leading-relaxed text-justify">
-                            A web‑based reporting tool designed to capture workplace safety issues directly from users. It provides a structured way for employees or stakeholders to submit hazard complaints in real time, ensuring that incidents are documented quickly and consistently. The form is hosted online, making it accessible from any device without requiring installation, and it integrates fields for describing hazards, categorizing risks, and triggering follow‑up actions. In essence, it’s a digital entry point for a broader safety management system, helping organizations streamline compliance, track interventions, and promote a culture of proactive risk reporting.
-                        </p>
+                        <h3 class="text-[#ffcf01] text-3xl font-bold uppercase ml-111 mb-55">Safety Complain</h3></a>                        
                     </div>
                 </article>
 
                 <article class="grid md:grid-cols-2 gap-6 mb-22">                    
                      <div class="order-2 md:order-1 mr-0 md:mr-8 flex flex-col items-start justify-center">
-                        <span class="text-xs tracking-widest uppercase text-justify md:text-right">Interactive Games</span>
+                        <span class="text-xs tracking-widest uppercase text-justify ml-66 md:text-right">Interactive <br>Games</span>
                         <a href="https://naz-ahtamir.github.io/Lomba-Lari/shake-race-player/" target="_blank" rel="noopener noreferrer">
-                        <h3 class="text-3xl font-bold uppercase text-[#00cfff] text-justify md:text-right">Shake Run</h3></a>
-                        <p class="mb-8 leading-relaxed text-justify">
-                            A web‑based motion game that runs directly in the browser, designed to turn a smartphone into a controller by using its accelerometer and gyroscope sensors. Instead of tapping buttons, players move their avatar by physically shaking or tilting their device, creating a fast‑paced and highly interactive racing experience. With a responsive HTML/CSS layout, custom fonts, and JavaScript handling real‑time motion events, the game blends accessibility and excitement—requiring no installation, yet delivering competitive, immersive gameplay that connects physical movement with digital racing fun.
-                        </p>
+                        <h3 class="text-3xl font-bold uppercase text-[#00cfff] text-justify md:text-right ml-55 mb-55">Shake <br>Run</h3></a>
                     </div>
-                    <figure class="mb-8 md:mb-0 relative overflow-hidden order-1 md:order-2">
-                        <a href="https://naz-ahtamir.github.io/Lomba-Lari/shake-race-player.html" target="_blank" rel="noopener noreferrer">    
-                        <img alt="Project Safety Complain" class="w-full h-auto cursor-pointer transition-transform duration-300 hover:scale-88 max-h-[100vh] object-contain items-right rounded-3xl" src="images/ShakeRun.png"/></a>
-                    </figure>                    
+                               
                 </article>   
                 
                 <article class="grid md:grid-cols-2 gap-6 mb-22">                    
-                    <figure class="mb-8 md:mb-0 relative overflow-hidden flex justify-start">
-                        <a href="https://tally.so/r/dWEXDD" target="_blank" rel="noopener noreferrer">    
-                        <img alt="Project Safety Complain" class="w-full h-auto cursor-pointer transition-transform duration-300 hover:scale-88 max-h-[80vh] object-contain items-left rounded-3xl" src="images/PTW.png"/></a>
-                    </figure>
-                        
+              
                     <div class="ml-0 md:ml-8 flex flex-col items-start justify-center">
-                        <span class="text-xs tracking-widest uppercase">Digital Safety Management</span>
+                        <span class="text-xs tracking-widest uppercase ml-22">Digital Safety <br> Management</span>
                         <a href="https://tally.so/r/dWEXDD" target="_blank" rel="noopener noreferrer">
-                        <h3 class="text-[#f4f4f4] text-3xl font-bold uppercase">Permit To Work</h3></a>
-                        <p class="mb-8 leading-relaxed text-justify">
-                            A comprehensive digital document designed to standardize and control the process of requesting and authorizing work permits in industrial or operational environments. It gathers detailed information such as the safety supervisor’s name and ID, the responsible unit, the person in charge of the job, the exact work location, and a clear description of the task, along with the submission date. By requiring these fields, the form ensures that every permit request is properly documented, traceable, and aligned with safety compliance standards. Its structured layout not only helps supervisors evaluate risks and responsibilities before work begins, but also creates a centralized record that supports accountability, regulatory audits, and operational transparency. In practice, this form functions as both a safety checkpoint and an administrative log, bridging communication between management, safety officers, and workers to reduce hazards and maintain consistent oversight across multiple job sites..
-                        </p>
+                        <h3 class="text-[#f4f4f4] text-3xl font-bold uppercase ml-11">Permit <br>To Work</h3></a>                        
                     </div>
                 </article>
 
         <section id="contact" class="py-24 relative">
-            <div class="max-w-6xl mx-auto px-6">
+            <div class="px-6 w-full">
                 <div class="flex items-center gap-3 mb-3">
                     <div class="w-8 h-px bg-[#00e5ff]"></div>
                     <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">CONTACT</span>
@@ -398,7 +377,7 @@
 <script type="module">
   import * as THREE from 'three';
 
-  // Setup canvas di belakang konten
+  // Canvas latar belakang
   const canvas = document.createElement('canvas');
   canvas.style.position = 'fixed';
   canvas.style.top = '0';
@@ -410,67 +389,74 @@
   document.body.prepend(canvas);
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x03060c); // hitam kebiruan gelap
+  scene.background = new THREE.Color(0x000000); // hitam polos
 
   const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.set(0, 0, 12);
+  camera.position.set(0, 0, 15);
+  camera.lookAt(0, 0, 0);
 
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: false });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
 
-  // --- Partikel bintang halus (putih kebiruan) ---
-  const particleCount = 1000;
-  const positions = new Float32Array(particleCount * 3);
-  const colors = new Float32Array(particleCount * 3);
+  // --- BINTANG SEDERHANA, WARNA CYAN (#00e5ff) ---
+  const STAR_COUNT = 800;
+  const positions = new Float32Array(STAR_COUNT * 3);
+  const speeds = new Float32Array(STAR_COUNT); // kecepatan gerak per bintang
 
-  for (let i = 0; i < particleCount; i++) {
-    // Sebar dalam volume kotak 3D
-    positions[i*3] = (Math.random() - 0.5) * 45;
-    positions[i*3+1] = (Math.random() - 0.5) * 25;
-    positions[i*3+2] = (Math.random() - 0.5) * 20 - 10;
-    
-    // Warna putih kebiruan dengan variasi intensitas
-    const intensity = 0.4 + Math.random() * 0.6;
-    colors[i*3] = 0.7 * intensity;   // R
-    colors[i*3+1] = 0.8 * intensity; // G
-    colors[i*3+2] = 1.0 * intensity; // B
+  for (let i = 0; i < STAR_COUNT; i++) {
+    // Sebar di area lebar (X: -40..40, Y: -25..25, Z: -20..5)
+    positions[i*3] = (Math.random() - 0.5) * 80;
+    positions[i*3+1] = (Math.random() - 0.5) * 50;
+    positions[i*3+2] = (Math.random() - 0.5) * 30 - 5;
+    // Kecepatan gerak horizontal (ke kanan) variatif
+    speeds[i] = 0.02 + Math.random() * 0.06;
   }
 
   const geometry = new THREE.BufferGeometry();
   geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+  // Warna seragam cyan #00e5ff (dalam RGB: 0, 229, 255)
+  const colors = new Float32Array(STAR_COUNT * 3);
+  for (let i = 0; i < STAR_COUNT; i++) {
+    colors[i*3] = 0;       // R
+    colors[i*3+1] = 229/255; // G (0.898)
+    colors[i*3+2] = 1.0;   // B
+  }
   geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-  const material = new THREE.PointsMaterial({ size: 0.08, vertexColors: true, transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending });
+  const material = new THREE.PointsMaterial({ size: 0.12, vertexColors: true, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending });
   const stars = new THREE.Points(geometry, material);
   scene.add(stars);
 
-  // --- Interaksi mouse (parallax halus pada kamera) ---
-  let targetX = 0, targetY = 0;
-  window.addEventListener('mousemove', (e) => {
-    targetX = (e.clientX / window.innerWidth) * 1.2 - 0.6;
-    targetY = (e.clientY / window.innerHeight) * 0.8 - 0.4;
-  });
-
-  let time = 0;
+  // --- ANIMASI: bintang bergerak ke kanan dengan kecepatan berbeda, lalu reset ke kiri ---
   function animate() {
     requestAnimationFrame(animate);
-    time += 0.003;
     
-    // Rotasi bintang sangat lambat
-    stars.rotation.y = time * 0.03;
-    stars.rotation.x = Math.sin(time * 0.1) * 0.05;
+    const positionsAttr = stars.geometry.attributes.position.array;
+    for (let i = 0; i < STAR_COUNT; i++) {
+      let x = positionsAttr[i*3];
+      x += speeds[i];
+      if (x > 45) { // melewati batas kanan
+        x = -45;
+        // acak posisi Y dan Z agar variatif
+        positionsAttr[i*3+1] = (Math.random() - 0.5) * 50;
+        positionsAttr[i*3+2] = (Math.random() - 0.5) * 30 - 5;
+        // kecepatan bisa diubah sedikit
+        speeds[i] = 0.02 + Math.random() * 0.07;
+      }
+      positionsAttr[i*3] = x;
+    }
+    stars.geometry.attributes.position.needsUpdate = true;
     
-    // Gerakan kamera mengikuti mouse
-    camera.position.x += (targetX - camera.position.x) * 0.05;
-    camera.position.y += (-targetY - camera.position.y) * 0.05;
-    camera.lookAt(0, 0, 0);
+    // Sedikit rotasi lambat pada sumbu Y (opsional)
+    stars.rotation.y += 0.0005;
     
     renderer.render(scene, camera);
   }
   animate();
 
-  // --- Responsif ---
+  // Responsif
   window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
