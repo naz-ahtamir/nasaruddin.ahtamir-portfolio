@@ -1,512 +1,642 @@
-<!DOCTYPE html>
-<html lang="EN" class="scroll-smooth">      
+<!doctype html>
+<html lang="EN" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <meta name="description" content="Portfolio of Nasaruddin Ahtamir – web developer and designer. Explore responsive web projects, HTML/CSS work, and technical collaborations. Contact for opportunities!">
-    <meta name="keywords" content="Nasaruddin Ahtamir, portfolio, web developer, web design, front-end developer, GitHub Pages, responsive design">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://nasaruddin.github.io/">
-    <meta property="og:title" content="Nasaruddin Ahtamir | Web Developer & Designer Portfolio">
-    <meta property="og:description" content="Portfolio of Nasaruddin Ahtamir – web developer and designer. View projects, responsive designs, and technical work.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nasaruddin.github.io/">
-    <meta property="og:image" content="https://nasaruddin.github.io/images/preview.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nasaruddin Ahtamir | Web Developer & Designer Portfolio">
-    <meta name="twitter:description" content="Portfolio of Nasaruddin Ahtamir – web developer and designer. View projects, responsive designs, and technical work.">
-    <meta name="twitter:image" content="https://nasaruddin.github.io/images/preview.jpg">
-    <meta name="google-site-verification" content="5n1BR2CHWcxtqKw4xwNAb4pCUKZmLv2qoY3jx4IInnc" />
-    <title>Nasaruddin Ahtamir | Web Developer & Designer Portfolio</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style type="text/tailwindcss">
-        @theme {
-            --font-grotesk: 'Space Grotesk', sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Nasaruddin Ahtamir – web developer and designer. Explore responsive web projects, HTML/CSS work, and technical collaborations. Contact for opportunities!" />
+  <meta name="keywords"
+    content="Nasaruddin Ahtamir, portfolio, web developer, web design, front-end developer, GitHub Pages, responsive design" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nasaruddin.github.io/" />
+  <meta property="og:title" content="Nasaruddin Ahtamir | Web Developer & Designer Portfolio" />
+  <meta property="og:description"
+    content="Portfolio of Nasaruddin Ahtamir – web developer and designer. View projects, responsive designs, and technical work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nasaruddin.github.io/" />
+  <meta property="og:image" content="https://nasaruddin.github.io/images/preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nasaruddin Ahtamir | Web Developer & Designer Portfolio" />
+  <meta name="twitter:description"
+    content="Portfolio of Nasaruddin Ahtamir – web developer and designer. View projects, responsive designs, and technical work." />
+  <meta name="twitter:image" content="https://nasaruddin.github.io/images/preview.jpg" />
+  <meta name="google-site-verification" content="5n1BR2CHWcxtqKw4xwNAb4pCUKZmLv2qoY3jx4IInnc" />
+  <title>naz-ahtamir | Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- Tambahkan favicon -->
+  <link rel="icon" type="image/webp" href="images/favicon.svg" />
+  <style type="text/tailwindcss">
+    @font-face {
+        font-family: "verdana";
+        src: url("fonts/verdana.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }  
 
-        @keyframes typing7 {
-            from {width: 0;}
-            to {width: 9ch;}
-        }        
+      @font-face {
+        font-family: "cybernetik";
+        src: url("fonts/cybernetik.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }  
 
-        @keyframes typing10 {
-            from {width: 0;}
-            to {width: 20ch;}
-        }
+      @font-face {
+        font-family: "nasalization";
+        src: url("fonts/nasalization.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }  
 
-        @keyframes blink {
-            50% {border-color: transparent;}
-        }
+    .typing-text {
+  border-right: 2px solid #00e5ff;
+  font-family: inherit; /* atau font spesifik */
+  white-space: nowrap;
+}
 
-        .animate-typing7 {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid #00e5ff;
-            animation: typing7 3s steps(7, end) infinite, blink .7s step-end infinite;
-        }
+/* Animasi blink untuk cursor */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
 
-        .animate-typing10 {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid white;
-            animation: typing10 4s steps(13, end) infinite, blink .7s step-end infinite;
-        }
+.typing-text.blinking {
+  animation: blink 0.7s step-end infinite;
+}
+      
+      /* custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050a0e;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #00e5ff;
+        border-radius: 8px;
+      }
 
-        /* additional smooth scrolling & better readability */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* custom scrollbar agar tetap elegan */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #050a0e;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #00e5ff;
-            border-radius: 8px;
-        }
+      /* Three.js canvas */
+      canvas.webgl {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -5;
+        pointer-events: none;
+      }
+      .relative-z {
+        position: relative;
+        z-index: 10;
+      }
+      #info {
+        position: fixed;
+        bottom: 12px;
+        right: 12px;
+        z-index: 20;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 10px;
+        color: #aaa;
+        pointer-events: none;
+      }
+      #info a {
+        color: #00e5ff;
+        text-decoration: none;
+      }
 
-         /* Tambahan untuk memastikan konten di atas canvas Three.js */
-        .relative-z {
-            position: relative;
-            z-index: 10;
-        }
-        canvas.webgl {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -5;
-            pointer-events: none;
-        }
-        /* Styling untuk info Three.js (opsional) */
-        #info {
-            position: fixed;
-            bottom: 12px;
-            right: 12px;
-            z-index: 20;
-            background: rgba(0,0,0,0.5);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 10px;
-            color: #aaa;
-            pointer-events: none;
-        }
-        #info a {
-            color: #00e5ff;
-            text-decoration: none;
-        }
+      /* ─── HOLOGRAPHIC CURSOR (gabungan) ─── */
+      .holographic-cursor {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.3s ease,
+          height 0.3s ease;
+      }
+      .holographic-cursor::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(255, 106, 0, 0.8);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow:
+          0 0 15px rgba(255, 106, 0, 0.6),
+          0 0 30px rgba(255, 106, 0, 0.3);
+        animation: cursorPulse 2s infinite;
+      }
+      .holographic-cursor::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(255, 106, 0, 0.8);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px rgba(255, 106, 0, 0.8);
+      }
+      .holographic-cursor.hover {
+        width: 60px;
+        height: 60px;
+      }
+      .holographic-cursor.hover::before {
+        border-color: rgba(255, 106, 0, 1);
+        box-shadow:
+          0 0 25px rgba(255, 106, 0, 0.8),
+          0 0 50px rgba(255, 106, 0, 0.5);
+      }
+      .holographic-cursor.hover::after {
+        border-color: rgba(255, 106, 0, 1);
+        box-shadow: 0 0 20px rgba(255, 106, 0, 1);
+      }
 
-        /* Crosshair cursor - ringan dan tajam */
-        .cyber-crosshair {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width 0.1s ease, height 0.1s ease;
+      @keyframes cursorPulse {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 0.8;
         }
-
-        .cyber-crosshair::before,
-        .cyber-crosshair::after {
-            content: '';
-            position: absolute;
-            background: #00e5ff;
-            box-shadow: 0 0 4px #00e5ff;
+        50% {
+          transform: translate(-50%, -50%) scale(1.1);
+          opacity: 0.5;
         }
+      }
 
-        .cyber-crosshair::before {
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 1.5px;
-            transform: translateY(-50%);
-        }
-
-        .cyber-crosshair::after {
-            top: 0;
-            left: 50%;
-            width: 1.5px;
-            height: 100%;
-            transform: translateX(-50%);
-        }
-
-        .cyber-crosshair.hover {
-            width: 32px;
-            height: 32px;
-        }
-
-        /* Sembunyikan kursor default di desktop */
+      /* Sembunyikan kursor default di desktop */
+      body {
+        cursor: none;
+      }
+      @media (max-width: 768px) {
         body {
-            cursor: none;
+          cursor: auto;
         }
-        @media (max-width: 768px) {
-            body {
-                cursor: auto;
-            }
-            .cyber-crosshair {
-                display: none;
-            }
+        .holographic-cursor {
+          display: none;
         }
+      }
+
+      /* Canvas trail (dari script akan dibuat sendiri) */
+      canvas.cursor-trail {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9998;
+      }
     </style>
 </head>
-<body class="font-grotesk text-white antialiased">
-    <div class="flex flex-col md:flex-row">
+
+<body class="text-white antialiased">
+  <div class="flex flex-col md:flex-row font-[cybernetik] text-xs">
     <!-- SIDEBAR KIRI: FOTO STICKY, LATAR MERAH SETINGGI LAYAR -->
-    <aside class="w-full md:flex-1 md:sticky md:top-0 md:h-screen flex flex-col bg-black/20 md:bg-black/30 backdrop-blur-md z-20" style="flex-basis: 35%;">
-        <!-- NAVBAR DI ATAS FOTO, TANPA BACKGROUND, TEKS TENGAH -->
-        <nav class="w-full py-4 px-6 bg-[#08ddf4] md:bg-transparent sticky top-0 z-30 font-bold">
-            <ul class="flex justify-center gap-6">
-                <li><a href="#home" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">HOME</a></li>
-                <li><a href="#about" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">ABOUT</a></li>
-                <li><a href="#projects" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">PROJECTS</a></li>
-                <li><a href="#contact" class="text-sm tracking-[0.15em] text-black hover:text-white transition font-mono">CONTACT</a></li>
-            </ul>
-        </nav>
-        
-        <!-- FOTO DI BAWAH NAVBAR (memenuhi sisa ruang) -->
-        <div class="w-full">
-            <img src="images/pro.jpg" alt="Nasaruddin Ahtamir"
-                class="w-full h-auto md:absolute md:inset-0 md:h-full md:object-cover">
-        </div>
+    <aside
+      class="w-full md:flex-1 md:sticky md:top-0 md:h-screen flex flex-col bg-black/20 md:bg-black/30 backdrop-blur-md z-20"
+      style="flex-basis: 35%">
+      <!-- NAVBAR DI ATAS FOTO, TANPA BACKGROUND, TEKS TENGAH -->
+      <nav class="w-full py-4 px-6 bg-[#08ddf4] md:bg-transparent sticky top-0 z-30 font-[nasalization] font-bold">
+        <ul class="flex justify-center gap-6">
+          <li>
+            <a href="#home" class="text-sm tracking-[0.15em] text-black hover:text-white transition">HOME</a>
+          </li>
+          <li>
+            <a href="#about" class="text-sm tracking-[0.15em] text-black hover:text-white transition">ABOUT</a>
+          </li>
+          <li>
+            <a href="#technical-expertise"
+              class="text-sm tracking-[0.15em] text-black hover:text-white transition">SKILLS</a>
+          </li>
+          <li>
+            <a href="#projects" class="text-sm tracking-[0.15em] text-black hover:text-white transition">PROJECTS</a>
+          </li>
+          <li>
+            <a href="#contact" class="text-sm tracking-[0.15em] text-black hover:text-white transition">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- FOTO DI BAWAH NAVBAR (memenuhi sisa ruang) -->
+      <div class="w-full">
+        <img src="images/pro.jpg" alt="Nasaruddin Ahtamir"
+          class="w-full h-auto md:absolute md:inset-0 md:h-full md:object-cover" />
+      </div>
     </aside>
-    
+
     <!-- KONTEN UTAMA DI KANAN (dalam 1 box) -->
-    <main class="w-full md:flex-1" style="flex-basis: 65%;"> 
-        <section id="home" class="min-h-screen flex items-center pt-16 overflow-hidden">
-            <div class="px-6 py-20 relative z-10 w-full">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-px bg-[#00e5ff]"></div>
-                        <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold animate-typing10">Hello, World</span>
-                </div>
-                <h1 class="font-bold leading-none mb-4 text-[clamp(3rem,8vw,5.5rem)]">
-                    <span class="text-white">NASARUDDIN</span><br>
-                    <span class="animate-typing7 inline-block text-cyan-400 drop-shadow-[0_0_22px_#00e5ff]">AHTAMIR</span>
-                </h1>
-                <div class="font-bold text-sm mb-8 flex flex-wrap gap-2">
-                    <span class="px-3 py-1 text-xs bg-[rgba(0,229,255,0.1)] border border-[rgba(0,229,255,0.3)] text-[#00e5ff] font-mono">Software Engineer</span>
-                    <span class="px-3 py-1 text-xs bg-[rgba(255,107,43,0.1)] border border-[rgba(255,107,43,0.3)] text-[#ff6b2b] font-mono">Web Developer</span>
-                    <span class="px-3 py-1 text-xs bg-[rgba(168,85,247,0.1)] border border-[rgba(168,85,247,0.3)] text-[#a855f7] font-mono">OHS Expert</span>
-                    <span class="px-3 py-1 text-xs bg-[rgba(0,255,136,0.1)] border border-[rgba(0,255,136,0.3)] text-[#00ff88] font-mono">OHS Management System Auditor</span>
-                </div>
-                <p class="text-justify">Coming from a background in leading teams and keeping workplaces safe, I now bring that same discipline into Software Engineering. My goal is to build <span class="text-[#00e5ff]">dependable and scalable solutions</span>, guided by a detail‑oriented mindset to tackle complex challenges across industries.</p>
-                <div class="flex flex-wrap gap-4 mt-8">
-                    <a href="#projects" class="inline-flex items-center gap-2 px-8 py-3 text-sm font-bold tracking-widest transition-all bg-gradient-to-br from-[#00e5ff] to-[#0072ff] text-black hover:shadow-[0_0_30px_rgba(0,229,255,0.5)]">VIEW PROJECTS →</a>
-                    <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3 font-bold text-sm tracking-widest transition-all bg-transparent border border-[#00e5ff] text-[#00e5ff] hover:bg-[rgba(0,229,255,0.1)]">CONTACT ME</a>
-                </div>
+    <main class="w-full md:flex-1" style="flex-basis: 65%">
+      <section id="home" class="min-h-screen flex items-center pt-16 overflow-hidden">
+        <div class="px-6 py-20 relative z-10 w-full">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-px bg-[#00e5ff]"></div>
+            <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-[cybernetik] font-bold">Hello,
+              World</span>
+          </div>
+          <h1 class="font-bold text-6xl leading-none mb-4 text-[clamp(3rem,8vw,5.5rem) font-[cybernetik]">
+            <span class="text-white">NASARUDDIN</span><br />
+            <span class="typing-text inline-block text-cyan-400 drop-shadow-[0_0_22px_#00e5ff]"></span>
+          </h1>
+          <div class="font-bold text-sm mb-8 flex flex-wrap gap-2 font-[nasalization]">
+            <span
+              class="px-3 py-1 text-xs bg-[rgba(0,229,255,0.1)] border border-[rgba(0,229,255,0.3)] text-[#00e5ff]">Software
+              Engineer</span>
+            <span
+              class="px-3 py-1 text-xs bg-[rgba(255,107,43,0.1)] border border-[rgba(255,107,43,0.3)] text-[#ff6b2b]">Web
+              Developer</span>
+            <span
+              class="px-3 py-1 text-xs bg-[rgba(168,85,247,0.1)] border border-[rgba(168,85,247,0.3)] text-[#a855f7]">OHS
+              Expert-Certified</span>
+            <span
+              class="px-3 py-1 text-xs bg-[rgba(0,255,136,0.1)] border border-[rgba(0,255,136,0.3)] text-[#00ff88]">OHS
+              Management System Auditor-Certified</span>
+          </div>
+          <p class="text-justify font-[nasalization] text-sm">
+            Coming from a background in leading teams and keeping workplaces
+            safe, I now bring that same discipline into Software Engineering.
+            My goal is to build
+            <span class="text-[#00e5ff]">dependable and scalable solutions</span>, guided by a detail‑oriented mindset
+            to tackle complex
+            challenges across industries.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-8 font-[nasalization] text-sm">
+            <a href="#projects"
+              class="inline-flex items-center gap-2 px-8 py-3 font-bold tracking-widest transition-all bg-gradient-to-br from-[#00e5ff] to-[#0072ff] text-black hover:shadow-[0_0_30px_rgba(0,229,255,0.5)]">VIEW
+              PROJECTS →</a>
+            <a href="#contact"
+              class="inline-flex items-center gap-2 px-8 py-3 font-bold tracking-widest transition-all bg-transparent border border-[#00e5ff] text-[#00e5ff] hover:bg-[rgba(0,229,255,0.1)]">CONTACT
+              ME</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="py-24 relative">
+        <div class="px-6 w-full">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-px bg-[#00e5ff]"></div>
+            <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-bold">About Me</span>
+          </div>
+
+          <h2 class="text-4xl font-bold">
+            <span class="text-white">WHO</span>
+            <span class="text-cyan-400 drop-shadow-[0_0_10px_#00e5ff]">AM I</span>
+          </h2>
+
+          <article class="space-y-6 text-justify text-white text-sm mt-22 font-[nasalization]">
+            <p>
+              I'm <span class="text-cyan-400 font-semibold font-[cybernetik]">Nasaruddin</span>.
+              With experience across diverse industries in Indonesia, I've
+              developed a commitment to building software solutions that are
+              reliable and high‑integrity.
+            </p>
+            <p>
+              My journey — from strategic leadership as an
+              <span class="text-orange-500">Acting Branch Manager</span> to
+              the technical rigor of an
+              <span class="text-orange-500">SMK3 Auditor</span> — has shaped a
+              <span class="text-orange-500 font-bold">safety‑first</span>
+              mindset that guides my work.
+            </p>
+            <p>
+              I focus on
+              <span class="text-purple-500">scalable systems</span>,
+              thoughtful architecture, and workflow optimization, often
+              integrating technology within occupational health and safety
+              (OHS) frameworks. Driven by the challenge of turning manual
+              processes into seamless digital solutions.
+            </p>
+          </article>
+      </section>
+      <section id="technical-expertise" class="py-24 relative">
+        <div class="px-6 w-full">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-px bg-[#00e5ff]"></div>
+            <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-bold">Technical
+              Expertise</span>
+          </div>
+
+          <h2 class="text-4xl font-bold mb-8">
+            <span class="text-white">TECH</span>
+            <span class="text-cyan-400 drop-shadow-[0_0_10px_#00e5ff]">STACK</span>
+          </h2>
+
+          <div class="space-y-10 tracking-[0.2em] text-sm uppercase font-[nasalization] font-bold text-white">
+            <!-- Languages & Frontend -->
+            <div>
+              <h3 class="mb-4 border-l-4 border-[#00e5ff] pl-4">
+                Languages & Frontend
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <img
+                  src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"
+                  alt="TypeScript" />
+                <img
+                  src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"
+                  alt="JavaScript" />
+                <img
+                  src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"
+                  alt="HTML5" />
+                <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"
+                  alt="CSS3" />
+                <img
+                  src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwindcss&logoColor=white"
+                  alt="TailwindCSS" />
+                <img
+                  src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"
+                  alt="React" />
+                <img src="https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=next.js&logoColor=white"
+                  alt="Next.js" />
+              </div>
             </div>
-        </section>
 
-        <section id="about" class="py-24 relative">
-            <div class="px-6 w-full">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-px bg-[#00e5ff]"></div>
-                        <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">About Me</span></div>
-    
-                        <h2 class="text-4xl font-bold">
-                            <span class="text-white">WHO</span>
-                            <span class="text-cyan-400 drop-shadow-[0_0_10px_#00e5ff]">AM I</span>
-                        </h2>     
-      
-                        <article class="space-y-6 text-justify text-white mt-22">
-                            <p class="text-base leading-relaxed">
-                                I'm <span class="text-cyan-400 font-semibold">Nasaruddin</span>. With experience across diverse industries in Indonesia, I've developed a commitment to building software solutions that are reliable and high‑integrity.
-                            </p>
-                            <p class="text-base leading-relaxed">
-                                My journey — from strategic leadership as an <span class="text-orange-500">Acting Branch Manager</span> to the technical rigor of an <span class="text-orange-500">SMK3 Auditor</span> — has shaped a <span class="text-orange-500 font-bold">safety‑first</span> mindset that guides my work.
-                            </p>
-                            <p class="text-base leading-relaxed">
-                                I focus on <span class="text-purple-500">scalable systems</span>, thoughtful architecture, and workflow optimization, often integrating technology within occupational health and safety (OHS) frameworks. Driven by the challenge of turning manual processes into seamless digital solutions.
-                            </p>
-                        </article>
-        </section>
-        
-        <section id="projects" class="py-24 relative">
-            <div class="px-6 w-full">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-8 h-px bg-[#00e5ff]"></div>
-                    <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">PROJECTS</span>
-                </div>
-            
-                <h2 class="text-4xl font-bold mb-47">
-                    <span class="text-[#e2f0f7]">FEATURED </span>
-                    <span class="text-[#ff6b2b] drop-shadow-[0_0_10px_#ff6b2b]">WORK</span>
-                </h2>
-
-                <article class="grid md:grid-cols-2 gap-6 mb-22">   
-                    <div class="ml-0 md:ml-8 flex flex-col ">
-                        <span class="text-xs tracking-widest uppercase ml-99">Industrial Compliance Tool</span>
-                        <a href="https://tally.so/r/0Q7Lz9" target="_blank" rel="noopener noreferrer">
-                        <h3 class="text-[#ffcf01] text-3xl font-bold uppercase ml-111">Safety Complain</h3></a>                        
-                    </div>
-                </article>
-
-                <article class="grid md:grid-cols-2 gap-6 mb-44">
-                        <div class="order-2 md:order-1 mr-0 md:mr-8 flex flex-col items-start justify-center">
-                            <span class="text-xs tracking-widest uppercase text-justify ml-69 md:text-right">Interactive
-                                <br>Mandarin Games</span>
-                            <a href="https://revofun.naz-ahtamir.site/" target="_blank"
-                                rel="noopener noreferrer">
-                                <h3
-                                    class="text-3xl font-bold uppercase text-[#FF6B2B] text-justify md:text-right ml-79">
-                                    RevoFun</h3>
-                            </a>
-                        </div>
-
-                    </article>
-
-                <article class="grid md:grid-cols-2 gap-6 mb-22">                    
-                     <div class="order-2 md:order-1 mr-0 md:mr-8 flex flex-col items-start justify-center">
-                        <span class="text-xs tracking-widest uppercase text-justify ml-66 md:text-right">Interactive <br>Games</span>
-                        <a href="https://naz-ahtamir.github.io/Lomba-Lari/shake-race-player/" target="_blank" rel="noopener noreferrer">
-                        <h3 class="text-3xl font-bold uppercase text-[#00cfff] text-justify md:text-right ml-55 mb-55">Shake <br>Run</h3></a>
-                    </div>
-                               
-                </article>   
-                
-                <article class="grid md:grid-cols-2 gap-6 mb-22">                    
-              
-                    <div class="ml-0 md:ml-8 flex flex-col items-start justify-center">
-                        <span class="text-xs tracking-widest uppercase ml-22">Digital Safety <br> Management</span>
-                        <a href="https://tally.so/r/dWEXDD" target="_blank" rel="noopener noreferrer">
-                        <h3 class="text-[#f4f4f4] text-3xl font-bold uppercase ml-11">Permit <br>To Work</h3></a>                        
-                    </div>
-                </article>
-
-        <section id="contact" class="py-24 relative">
-            <div class="px-6 w-full">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-8 h-px bg-[#00e5ff]"></div>
-                    <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-mono font-bold">CONTACT</span>
-                </div>
-
-                <h2 class="text-4xl font-bold">
-                    <span class="text-white">GET IN</span>
-                    <span class="text-cyan-400 drop-shadow-[0_0_10px_#00e5ff]">TOUCH</span>
-                </h2>
-            
-                <div class="grid lg:grid-cols-2 gap-12 mt-22">                    
-                    <div class="space-y-6">
-                        <div class="p-6 bg-[#0a1520] border border-[#1a3a4a] text-[#e2f0f7] shadow-md">
-                            <p class="font-bold text-lg mb-2">Open to Opportunities</p>
-                            <p class="text-sm leading-relaxed">
-                            Open to internship opportunities, freelance projects, and collaborations. Drop a message — I read everything.
-                            </p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <a href="mailto:nasaruddin.ahtamir@gmail.com" class="flex items-center gap-4 p-4 bg-[#0a1520] border border-[#1a3a4a] transition-colors hover:border-[#00e5ff]">
-                                <div class="w-8 h-8 flex items-center justify-center flex-shrink-0 bg-[rgba(0,229,255,0.15)]">
-                                    <span class="text-[#00e5ff] text-sm">✉</span>
-                                </div>
-                                <div>
-                                    <p class="font-mono text-xs mb-0.5 text-[rgba(226,240,247,0.4)]">EMAIL</p>
-                                    <p class="text-sm text-[#00e5ff]">nasaruddin.ahtamir@gmail.com</p>
-                                </div>
-                            </a>
-
-                            <a href="https://id.linkedin.com/in/nasaruddin-st-86a593258" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 bg-[#0a1520] border border-[#1a3a4a] transition-colors hover:border-[#0072ff]">
-                                <div class="w-8 h-8 flex items-center justify-center flex-shrink-0 bg-[rgba(0,114,255,0.15)]">
-                                    <span class="text-[#0072ff] text-sm">in</span>
-                                </div>
-                                <div>
-                                    <p class="font-mono text-xs mb-0.5 text-[rgba(226,240,247,0.4)]">LINKEDIN</p>
-                                    <p class="text-sm text-[#0072ff]">linkedin.com/in/nasaruddin-st</p>
-                                </div>
-                            </a>
-
-                            <a href="https://github.com/naz-ahtamir" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 bg-[#0a1520] border border-[#1a3a4a] transition-colors hover:border-[#a855f7]">
-                                <div class="w-8 h-8 flex items-center justify-center flex-shrink-0 bg-[rgba(168,85,247,0.15)]">
-                                    <span class="text-[#a855f7] text-sm">⌥</span>
-                                </div>
-                                <div>
-                                    <p class="font-mono text-xs mb-0.5 text-[rgba(226,240,247,0.4)]">GITHUB</p>
-                                    <p class="text-sm text-[#a855f7]">github.com/naz-ahtamir</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>               
-                    
-                    <div class="p-6 bg-[#0a1520] border border-[#1a3a4a] shadow-md">
-                        <p class="text-[#e2f0f7] font-bold text-lg mb-6">Send a Message</p>  
-
-                        <form class="space-y-4" id="contact-form">                                              
-                            <label class="font-mono text-xs block mb-2 text-[rgba(226,240,247,0.5)]">NAME <span class="text-[#ff6b2b]">*</span></label>
-                                <input type="text" name="name" placeholder="Your Full Name" required class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors" />                                                  
-                                                
-                            <label class="font-mono text-xs block mt-4 mb-2 text-[rgba(226,240,247,0.5)]">EMAIL <span class="text-[#ff6b2b]">*</span></label>
-                                <input type="email" name="email" placeholder="your@email.com" required class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors" />
-                            
-                            <label class="font-mono text-xs block mt-4 mb-2 text-[rgba(226,240,247,0.5)]">MESSAGE</label>
-                                <textarea name="message" rows="4" placeholder="Tell me about your project..." class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors resize-y"></textarea>
-                            
-
-                            <div class="flex gap-3 pt-2">
-                                <button type="reset"
-                                    class="flex-1 py-3 font-mono text-xs font-bold tracking-widest border border-[#1a3a4a] text-[rgba(226,240,247,0.5)] transition-colors hover:border-[#ff6b2b] hover:text-[#ff6b2b]">
-                                    RESET
-                                </button>
-
-                                <button type="submit"
-                                    class="flex-2 px-8 py-3 font-mono text-xs font-bold tracking-widest transition-shadow bg-gradient-to-br from-[#00e5ff] to-[#0072ff] text-black hover:shadow-[0_0_20px_rgba(0,229,255,0.4)]">
-                                    SEND MESSAGE →
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <!-- Backend & Database -->
+            <div>
+              <h3 class="mb-4 border-l-4 border-[#00e5ff] pl-4">
+                Backend & Database
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white"
+                  alt="Node.js" />
+                <img
+                  src="https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white"
+                  alt="NestJS" />
+                <img src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white"
+                  alt="MySQL" />
+                <img
+                  src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white"
+                  alt="Postgres" />
+                <img
+                  src="https://img.shields.io/badge/mongodb-%2347A248.svg?style=for-the-badge&logo=mongodb&logoColor=white"
+                  alt="MongoDB" />
+                <img
+                  src="https://img.shields.io/badge/prisma-%2300A8E8.svg?style=for-the-badge&logo=prisma&logoColor=white"
+                  alt="Prisma" />
+                <img
+                  src="https://img.shields.io/badge/supabase-%233FCF8E.svg?style=for-the-badge&logo=supabase&logoColor=white"
+                  alt="Supabase" />
+              </div>
             </div>
-        </section>
-    
-        <footer class="py-8 border-t border-[#1a3a4a] bg-[#050a0e]">
-            <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-                <p class="font-mono text-xs text-[rgba(226,240,247,0.4)]">
-                © 2026 <span class="text-[#ff6b2b]">Nasaruddin</span> · All rights reserved.</p>
-                <p class="font-mono text-xs text-[rgba(226,240,247,0.4)]">
-                Built with <span class="text-[#00e5ff]">HTML</span> · <span class="text-[#00e5ff]">Tailwind CSS</span></p>
+
+            <!-- DevOps, Testing & Workflow -->
+            <div>
+              <h3 class="mb-4 border-l-4 border-[#00e5ff] pl-4">
+                DevOps, Testing & Workflow
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white"
+                  alt="Git" />
+                <img
+                  src="https://img.shields.io/badge/docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white"
+                  alt="Docker" />
+                <img src="https://img.shields.io/badge/jest-%23C21325.svg?style=for-the-badge&logo=jest&logoColor=white"
+                  alt="Jest" />
+                <img
+                  src="https://img.shields.io/badge/eslint-%234B32C3.svg?style=for-the-badge&logo=eslint&logoColor=white"
+                  alt="ESLint" />
+                <img src="https://img.shields.io/badge/npm-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white"
+                  alt="NPM" />
+                <img src="https://img.shields.io/badge/pnpm-%23F69220.svg?style=for-the-badge&logo=pnpm&logoColor=white"
+                  alt="PNPM" />
+                <img
+                  src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=white"
+                  alt="Netlify" />
+                <img
+                  src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"
+                  alt="Vercel" />
+                <img
+                  src="https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white"
+                  alt="Apache" />
+              </div>
             </div>
-        </footer>
-    </main>
-    
-    
 
-<script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
-    }
-  }
-</script>
+            <!-- Design, Hardware & Utility -->
+            <div>
+              <h3 class="mb-4 border-l-4 border-[#00e5ff] pl-4">
+                Design, Hardware & Utility
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <img
+                  src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"
+                  alt="Figma" />
+                <img
+                  src="https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobephotoshop&logoColor=white"
+                  alt="Photoshop" />
+                <img
+                  src="https://img.shields.io/badge/bash-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white"
+                  alt="Bash" />
+                <img
+                  src="https://img.shields.io/badge/jwt-%23000000.svg?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white"
+                  alt="JWT" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<script type="module">
-  import * as THREE from 'three';
+      <section id="projects" class="py-24 relative">
+        <div class="px-6 w-full">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-px bg-[#00e5ff]"></div>
+            <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-bold">PROJECTS</span>
+          </div>
 
-  // Canvas latar belakang
-  const canvas = document.createElement('canvas');
-  canvas.style.position = 'fixed';
-  canvas.style.top = '0';
-  canvas.style.left = '0';
-  canvas.style.width = '100%';
-  canvas.style.height = '100%';
-  canvas.style.zIndex = '-5';
-  canvas.style.pointerEvents = 'none';
-  document.body.prepend(canvas);
+          <h2 class="text-4xl font-bold mb-8">
+            <span class="text-[#e2f0f7]">FEATURED </span>
+            <span class="text-[#ff6b2b] drop-shadow-[0_0_10px_#ff6b2b]">WORK</span>
+          </h2>
 
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x000000); // hitam polos
+          <article class="grid md:grid-cols-2 gap-12 mt-22 mb-22">
+            <div class="ml-0 md:ml-8 flex flex-col">
+              <span class="text-sm tracking-widest font-[nasalization] uppercase">Industrial Compliance
+                Tool</span>
+              <a href="https://tally.so/r/0Q7Lz9" target="_blank" rel="noopener noreferrer">
+                <h3 class="text-[#ffcf01] text-3xl font-bold uppercase ml-33">
+                  Safety Complain
+                </h3>
+              </a>
+            </div>
+          </article>
 
-  const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.set(0, 0, 15);
-  camera.lookAt(0, 0, 0);
+          <article class="grid md:grid-cols-2 gap-6 mb-22">
+            <div class="ml-0 md:ml-8 flex flex-col">
+              <span class="text-sm tracking-widest font-[nasalization] uppercase">Interactive Mandarin Games</span>
+              <a href="https://revofun.naz-ahtamir.site/" target="_blank" rel="noopener noreferrer">
+                <h3 class="text-3xl font-bold uppercase text-[#FF6B2B] text-justify ml-33">
+                  RevoFun
+                </h3>
+              </a>
+            </div>
+          </article>
 
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: false });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
+          <article class="grid md:grid-cols-2 gap-6 mb-22">
+            <div class="ml-0 md:ml-8 flex flex-col">
+              <span class="text-sm tracking-widest font-[nasalization] uppercase text-justify">Interactive Games</span>
+              <a href="https://naz-ahtamir.github.io/Lomba-Lari/shake-race-player/" target="_blank"
+                rel="noopener noreferrer">
+                <h3 class="text-3xl font-bold uppercase text-[#00cfff] text-justify ml-33">
+                  Shake Run
+                </h3>
+              </a>
+            </div>
+          </article>
 
-  // --- BINTANG SEDERHANA, WARNA CYAN (#00e5ff) ---
-  const STAR_COUNT = 800;
-  const positions = new Float32Array(STAR_COUNT * 3);
-  const speeds = new Float32Array(STAR_COUNT); // kecepatan gerak per bintang
+          <article class="grid md:grid-cols-2 gap-6 mb-22">
+            <div class="ml-0 md:ml-8 flex flex-col">
+              <span class="text-sm tracking-widest font-[nasalization] uppercase">Digital Safety Management</span>
+              <a href="https://tally.so/r/dWEXDD" target="_blank" rel="noopener noreferrer">
+                <h3 class="text-[#f4f4f4] text-3xl font-bold uppercase ml-33">
+                  Permit <br />To Work
+                </h3>
+              </a>
+            </div>
+          </article>
+      </section>
+      <section id="contact" class="py-24 relative">
+        <div class="px-6 w-full">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-px bg-[#00e5ff]"></div>
+            <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-bold">CONTACT</span>
+          </div>
 
-  for (let i = 0; i < STAR_COUNT; i++) {
-    // Sebar di area lebar (X: -40..40, Y: -25..25, Z: -20..5)
-    positions[i*3] = (Math.random() - 0.5) * 80;
-    positions[i*3+1] = (Math.random() - 0.5) * 50;
-    positions[i*3+2] = (Math.random() - 0.5) * 30 - 5;
-    // Kecepatan gerak horizontal (ke kanan) variatif
-    speeds[i] = 0.02 + Math.random() * 0.06;
-  }
+          <h2 class="text-4xl font-bold">
+            <span class="text-white">GET IN</span>
+            <span class="text-cyan-400 drop-shadow-[0_0_10px_#00e5ff]">TOUCH</span>
+          </h2>
 
-  const geometry = new THREE.BufferGeometry();
-  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+          <div class="grid lg:grid-cols-2 gap-12 mt-22 font-[nasalization]">
+            <div class="space-y-6">
+              <div class="p-6 bg-[#0a1520] border border-[#1a3a4a] text-[#e2f0f7] shadow-md">
+                <p class="text-xl font-[nasalization] uppercase font-bold mb-2">
+                  Open to Opportunities
+                </p>
+                <p class="text-sm">
+                  Open to internship opportunities, freelance
+                  projects, and collaborations. Drop a message — I
+                  read everything.
+                </p>
+              </div>
+              <div class="space-y-3">
+                <a href="mailto:nasaruddin.ahtamir@gmail.com"
+                  class="flex items-center gap-4 p-4 bg-[#0a1520] border border-[#1a3a4a] transition-colors hover:border-[#00e5ff]">
+                  <div class="w-8 h-8 flex items-center justify-center flex-shrink-0 bg-[rgba(0,229,255,0.15)]">
+                    <span class="text-[#00e5ff] text-sm">✉</span>
+                  </div>
+                  <div>
+                    <p class="font-[cybernetik] text-xs mb-0.5 text-white/88">
+                      EMAIL
+                    </p>
+                    <p class="text-sm text-[#00e5ff]">
+                      nasaruddin.ahtamir@gmail.com
+                    </p>
+                  </div>
+                </a>
 
-  // Warna seragam cyan #00e5ff (dalam RGB: 0, 229, 255)
-  const colors = new Float32Array(STAR_COUNT * 3);
-  for (let i = 0; i < STAR_COUNT; i++) {
-    colors[i*3] = 0;       // R
-    colors[i*3+1] = 229/255; // G (0.898)
-    colors[i*3+2] = 1.0;   // B
-  }
-  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+                <a href="https://id.linkedin.com/in/nasaruddin-st-86a593258" target="_blank" rel="noopener noreferrer"
+                  class="flex items-center gap-4 p-4 bg-[#0a1520] border border-[#1a3a4a] transition-colors hover:border-[#0072ff]">
+                  <div class="w-8 h-8 flex items-center justify-center flex-shrink-0 bg-[rgba(0,114,255,0.15)]">
+                    <span class="text-[#0072ff] text-sm">in</span>
+                  </div>
+                  <div>
+                    <p class="font-[cybernetik] text-xs mb-0.5 text-white/88">
+                      LINKEDIN
+                    </p>
+                    <p class="text-sm text-[#0072ff]">
+                      linkedin.com/in/nasaruddin-st
+                    </p>
+                  </div>
+                </a>
 
-  const material = new THREE.PointsMaterial({ size: 0.12, vertexColors: true, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending });
-  const stars = new THREE.Points(geometry, material);
-  scene.add(stars);
+                <a href="https://github.com/naz-ahtamir" target="_blank" rel="noopener noreferrer"
+                  class="flex items-center gap-4 p-4 bg-[#0a1520] border border-[#1a3a4a] transition-colors hover:border-[#a855f7]">
+                  <div class="w-8 h-8 flex items-center justify-center flex-shrink-0 bg-[rgba(168,85,247,0.15)]">
+                    <span class="text-[#a855f7] text-sm">⌥</span>
+                  </div>
+                  <div>
+                    <p class="font-[cybernetik] text-xs mb-0.5 text-white/88">
+                      GITHUB
+                    </p>
+                    <p class="text-sm text-[#a855f7]">
+                      github.com/naz-ahtamir
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
 
-  // --- ANIMASI: bintang bergerak ke kanan dengan kecepatan berbeda, lalu reset ke kiri ---
-  function animate() {
-    requestAnimationFrame(animate);
-    
-    const positionsAttr = stars.geometry.attributes.position.array;
-    for (let i = 0; i < STAR_COUNT; i++) {
-      let x = positionsAttr[i*3];
-      x += speeds[i];
-      if (x > 45) { // melewati batas kanan
-        x = -45;
-        // acak posisi Y dan Z agar variatif
-        positionsAttr[i*3+1] = (Math.random() - 0.5) * 50;
-        positionsAttr[i*3+2] = (Math.random() - 0.5) * 30 - 5;
-        // kecepatan bisa diubah sedikit
-        speeds[i] = 0.02 + Math.random() * 0.07;
-      }
-      positionsAttr[i*3] = x;
-    }
-    stars.geometry.attributes.position.needsUpdate = true;
-    
-    // Sedikit rotasi lambat pada sumbu Y (opsional)
-    stars.rotation.y += 0.0005;
-    
-    renderer.render(scene, camera);
-  }
-  animate();
+            <div class="p-6 bg-[#0a1520] border border-[#1a3a4a] shadow-md">
+              <p class="text-[#e2f0f7] text-xl mb-6 font-[nasalization] uppercase font-bold">
+                Send a Message
+              </p>
 
-  // Responsif
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
-</script>
+              <form class="space-y-4" id="contact-form">
+                <label class="font-[cybernetik] text-xs block mb-2 text-white/88">NAME <span
+                    class="text-[#ff6b2b]">*</span></label>
+                <input type="text" name="name" placeholder="Your Full Name" required
+                  class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors" />
 
-<script>
-// Script crosshair - ringan
-(function() {
-    const cross = document.createElement('div');
-    cross.className = 'cyber-crosshair';
-    document.body.appendChild(cross);
-    
-    let mouseX = 0, mouseY = 0;
-    let rafId = null;
-    
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        if (rafId === null) {
-            rafId = requestAnimationFrame(function update() {
-                cross.style.left = mouseX + 'px';
-                cross.style.top = mouseY + 'px';
-                rafId = null;
-            });
+                <label class="font-[cybernetik] text-xs block mt-4 mb-2 text-white/88">EMAIL <span
+                    class="text-[#ff6b2b]">*</span></label>
+                <input type="email" name="email" placeholder="your@email.com" required
+                  class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors" />
+
+                <label class="font-[cybernetik] text-xs block mt-4 mb-2 text-white/88">MESSAGE</label>
+                <textarea name="message" rows="4" placeholder="Tell me about your project..."
+                  class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors resize-y"></textarea>
+
+                <div class="flex gap-3 pt-2">
+                  <button type="reset"
+                    class="flex-1 py-3 text-xs font-bold tracking-widest border border-[#1a3a4a] text-[rgba(226,240,247,0.5)] transition-colors hover:border-[#ff6b2b] hover:text-[#ff6b2b]">
+                    RESET
+                  </button>
+
+                  <button type="submit"
+                    class="flex-2 px-8 py-3 text-xs font-bold tracking-widest transition-shadow bg-gradient-to-br from-[#00e5ff] to-[#0072ff] text-black hover:shadow-[0_0_20px_rgba(0,229,255,0.4)]">
+                    SEND MESSAGE →
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="py-8 border-t border-[#1a3a4a] bg-[#050a0e] font-[nasalization]">
+        <div
+          class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <p class="text-xs text-[rgba(226,240,247,0.4)]">
+            © 2026 <span class="text-[#ff6b2b] font-[cybernetik]">Nasaruddin</span> ·
+            All rights reserved.
+          </p>
+          <p class="text-xs text-[rgba(226,240,247,0.4)]">
+            Built with <span class="text-[#00e5ff] font-[cybernetik]">HTML</span> ·
+            <span class="text-[#00e5ff] font-[cybernetik]">Tailwind CSS</span>
+          </p>
+        </div>
+      </footer>
+      <!-- THREE.JS IMPORT MAP (tetap di HTML) -->
+      <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+          }
         }
-    });
-    
-    const interactive = document.querySelectorAll('a, button, [role="button"]');
-    interactive.forEach(el => {
-        el.addEventListener('mouseenter', () => cross.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cross.classList.remove('hover'));
-    });
-})();
-</script>
-
+      </script>
+      <script type="module" src="js/three-stars.js"></script>
+      <script src="js/holographic-cursor.js"></script>
+      <script src="js/cursor-trail.js"></script>
+      <script src="js/typing-effect.js"></script>
+    </main>
+  </div>
 </body>
+
 </html>
