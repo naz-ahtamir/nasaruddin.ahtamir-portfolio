@@ -26,177 +26,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <!-- Tambahkan favicon -->
   <link rel="icon" type="image/webp" href="images/favicon.svg" />
-  <style type="text/tailwindcss">
-    @font-face {
-        font-family: "verdana";
-        src: url("fonts/verdana.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-      }  
-
-      @font-face {
-        font-family: "cybernetik";
-        src: url("fonts/cybernetik.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-      }  
-
-      @font-face {
-        font-family: "nasalization";
-        src: url("fonts/nasalization.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-      }  
-
-    .typing-text {
-  border-right: 2px solid #00e5ff;
-  font-family: inherit; /* atau font spesifik */
-  white-space: nowrap;
-}
-
-/* Animasi blink untuk cursor */
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-.typing-text.blinking {
-  animation: blink 0.7s step-end infinite;
-}
-      
-      /* custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #050a0e;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #00e5ff;
-        border-radius: 8px;
-      }
-
-      /* Three.js canvas */
-      canvas.webgl {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -5;
-        pointer-events: none;
-      }
-      .relative-z {
-        position: relative;
-        z-index: 10;
-      }
-      #info {
-        position: fixed;
-        bottom: 12px;
-        right: 12px;
-        z-index: 20;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-family: monospace;
-        font-size: 10px;
-        color: #aaa;
-        pointer-events: none;
-      }
-      #info a {
-        color: #00e5ff;
-        text-decoration: none;
-      }
-
-      /* ─── HOLOGRAPHIC CURSOR (gabungan) ─── */
-      .holographic-cursor {
-        position: fixed;
-        width: 40px;
-        height: 40px;
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        transition:
-          width 0.3s ease,
-          height 0.3s ease;
-      }
-      .holographic-cursor::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        border: 1px solid rgba(255, 106, 0, 0.8);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow:
-          0 0 15px rgba(255, 106, 0, 0.6),
-          0 0 30px rgba(255, 106, 0, 0.3);
-        animation: cursorPulse 2s infinite;
-      }
-      .holographic-cursor::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 20px;
-        height: 20px;
-        border: 2px solid rgba(255, 106, 0, 0.8);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 0 10px rgba(255, 106, 0, 0.8);
-      }
-      .holographic-cursor.hover {
-        width: 60px;
-        height: 60px;
-      }
-      .holographic-cursor.hover::before {
-        border-color: rgba(255, 106, 0, 1);
-        box-shadow:
-          0 0 25px rgba(255, 106, 0, 0.8),
-          0 0 50px rgba(255, 106, 0, 0.5);
-      }
-      .holographic-cursor.hover::after {
-        border-color: rgba(255, 106, 0, 1);
-        box-shadow: 0 0 20px rgba(255, 106, 0, 1);
-      }
-
-      @keyframes cursorPulse {
-        0%,
-        100% {
-          transform: translate(-50%, -50%) scale(1);
-          opacity: 0.8;
-        }
-        50% {
-          transform: translate(-50%, -50%) scale(1.1);
-          opacity: 0.5;
-        }
-      }
-
-      /* Sembunyikan kursor default di desktop */
-      body {
-        cursor: none;
-      }
-      @media (max-width: 768px) {
-        body {
-          cursor: auto;
-        }
-        .holographic-cursor {
-          display: none;
-        }
-      }
-
-      /* Canvas trail (dari script akan dibuat sendiri) */
-      canvas.cursor-trail {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 9998;
-      }
-    </style>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="text-white antialiased">
@@ -206,23 +36,23 @@
       class="w-full md:flex-1 md:sticky md:top-0 md:h-screen flex flex-col bg-black/20 md:bg-black/30 backdrop-blur-md z-20"
       style="flex-basis: 35%">
       <!-- NAVBAR DI ATAS FOTO, TANPA BACKGROUND, TEKS TENGAH -->
-      <nav class="w-full py-4 px-6 bg-[#08ddf4] md:bg-transparent sticky top-0 z-30 font-[nasalization] font-bold">
-        <ul class="flex justify-center gap-6">
-          <li>
-            <a href="#home" class="text-sm tracking-[0.15em] text-black hover:text-white transition">HOME</a>
+      <nav
+        class="w-full py-3 px-2 md:py-4 md:px-6 bg-[#08ddf4] md:bg-transparent md:sticky top-0 z-30 font-[nasalization] font-bold">
+        <ul class="flex justify-center gap-2 md:gap-6">
+          <li><a href="#home"
+              class="text-xs md:text-sm tracking-[0.15em] text-black hover:text-white transition whitespace-nowrap">HOME</a>
           </li>
-          <li>
-            <a href="#about" class="text-sm tracking-[0.15em] text-black hover:text-white transition">ABOUT</a>
+          <li><a href="#about"
+              class="text-xs md:text-sm tracking-[0.15em] text-black hover:text-white transition whitespace-nowrap">ABOUT</a>
           </li>
-          <li>
-            <a href="#technical-expertise"
-              class="text-sm tracking-[0.15em] text-black hover:text-white transition">SKILLS</a>
+          <li><a href="#technical-expertise"
+              class="text-xs md:text-sm tracking-[0.15em] text-black hover:text-white transition whitespace-nowrap">SKILLS</a>
           </li>
-          <li>
-            <a href="#projects" class="text-sm tracking-[0.15em] text-black hover:text-white transition">PROJECTS</a>
+          <li><a href="#projects"
+              class="text-xs md:text-sm tracking-[0.15em] text-black hover:text-white transition whitespace-nowrap">PROJECTS</a>
           </li>
-          <li>
-            <a href="#contact" class="text-sm tracking-[0.15em] text-black hover:text-white transition">CONTACT</a>
+          <li><a href="#contact"
+              class="text-xs md:text-sm tracking-[0.15em] text-black hover:text-white transition whitespace-nowrap">CONTACT</a>
           </li>
         </ul>
       </nav>
@@ -235,7 +65,7 @@
     </aside>
 
     <!-- KONTEN UTAMA DI KANAN (dalam 1 box) -->
-    <main class="w-full md:flex-1" style="flex-basis: 65%">
+    <main class="w-full break-words md:flex-1 text-2xl sm:text-3xl lg:text-5xl" style="flex-basis:65%">
       <section id="home" class="min-h-screen flex items-center pt-16 overflow-hidden">
         <div class="px-6 py-20 relative z-10 w-full">
           <div class="flex items-center gap-3 mb-6">
@@ -243,7 +73,10 @@
             <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-[cybernetik] font-bold">Hello,
               World</span>
           </div>
-          <h1 class="font-bold text-6xl leading-none mb-4 text-[clamp(3rem,8vw,5.5rem) font-[cybernetik]">
+          <h1 class="font-bold leading-none mb-4 font-[cybernetik]
+              text-[clamp(1.6rem,5vw,2.5rem)]
+              sm:text-[clamp(2rem,6vw,4rem)]
+              lg:text-[clamp(3rem,7vw,5rem)]">
             <span class="text-white">NASARUDDIN</span><br />
             <span class="typing-text inline-block text-cyan-400 drop-shadow-[0_0_22px_#00e5ff]"></span>
           </h1>
@@ -261,7 +94,7 @@
               class="px-3 py-1 text-xs bg-[rgba(0,255,136,0.1)] border border-[rgba(0,255,136,0.3)] text-[#00ff88]">OHS
               Management System Auditor-Certified</span>
           </div>
-          <p class="text-justify font-[nasalization] text-sm">
+          <p class="text-justify font-[nasalization] text-sm mt-22">
             Coming from a background in leading teams and keeping workplaces
             safe, I now bring that same discipline into Software Engineering.
             My goal is to build
@@ -287,7 +120,7 @@
             <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-bold">About Me</span>
           </div>
 
-          <h2 class="text-4xl font-bold">
+          <h2 class="font-bold">
             <span class="text-white">WHO</span>
             <span class="text-cyan-400 drop-shadow-[0_0_10px_#00e5ff]">AM I</span>
           </h2>
@@ -325,7 +158,7 @@
               Expertise</span>
           </div>
 
-          <h2 class="text-4xl font-bold mb-8">
+          <h2 class="font-bold mb-8">
             <span class="text-white">TECH</span>
             <span class="text-cyan-400 drop-shadow-[0_0_10px_#00e5ff]">STACK</span>
           </h2>
@@ -333,7 +166,7 @@
           <div class="space-y-10 tracking-[0.2em] text-sm uppercase font-[nasalization] font-bold text-white">
             <!-- Languages & Frontend -->
             <div>
-              <h3 class="mb-4 border-l-4 border-[#00e5ff] pl-4">
+              <h3 class="mt-22 mb-4 border-l-4 border-[#00e5ff] pl-4">
                 Languages & Frontend
               </h3>
               <div class="flex flex-wrap gap-2">
@@ -450,7 +283,7 @@
             <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-bold">PROJECTS</span>
           </div>
 
-          <h2 class="text-4xl font-bold mb-8">
+          <h2 class="font-bold mb-8">
             <span class="text-[#e2f0f7]">FEATURED </span>
             <span class="text-[#ff6b2b] drop-shadow-[0_0_10px_#ff6b2b]">WORK</span>
           </h2>
@@ -460,7 +293,7 @@
               <span class="text-sm tracking-widest font-[nasalization] uppercase">Industrial Compliance
                 Tool</span>
               <a href="https://tally.so/r/0Q7Lz9" target="_blank" rel="noopener noreferrer">
-                <h3 class="text-[#ffcf01] text-3xl font-bold uppercase ml-33">
+                <h3 class="text-[clamp(1rem,3vw,1.5rem)] text-[#ffcf01] font-bold uppercase ml-33">
                   Safety Complain
                 </h3>
               </a>
@@ -471,7 +304,7 @@
             <div class="ml-0 md:ml-8 flex flex-col">
               <span class="text-sm tracking-widest font-[nasalization] uppercase">Interactive Mandarin Games</span>
               <a href="https://revofun.naz-ahtamir.site/" target="_blank" rel="noopener noreferrer">
-                <h3 class="text-3xl font-bold uppercase text-[#FF6B2B] text-justify ml-33">
+                <h3 class="text-[clamp(1rem,3vw,1.5rem)] font-bold uppercase text-[#FF6B2B] text-justify ml-33">
                   RevoFun
                 </h3>
               </a>
@@ -483,7 +316,7 @@
               <span class="text-sm tracking-widest font-[nasalization] uppercase text-justify">Interactive Games</span>
               <a href="https://naz-ahtamir.github.io/Lomba-Lari/shake-race-player/" target="_blank"
                 rel="noopener noreferrer">
-                <h3 class="text-3xl font-bold uppercase text-[#00cfff] text-justify ml-33">
+                <h3 class="text-[clamp(1rem,3vw,1.5rem)] font-bold uppercase text-[#00cfff] text-justify ml-33">
                   Shake Run
                 </h3>
               </a>
@@ -494,7 +327,7 @@
             <div class="ml-0 md:ml-8 flex flex-col">
               <span class="text-sm tracking-widest font-[nasalization] uppercase">Digital Safety Management</span>
               <a href="https://tally.so/r/dWEXDD" target="_blank" rel="noopener noreferrer">
-                <h3 class="text-[#f4f4f4] text-3xl font-bold uppercase ml-33">
+                <h3 class="text-[clamp(1rem,3vw,1.5rem)] text-[#f4f4f4] font-bold uppercase ml-33">
                   Permit <br />To Work
                 </h3>
               </a>
@@ -508,7 +341,7 @@
             <span class="text-[#00e5ff] tracking-[0.2em] text-[0.7rem] uppercase font-bold">CONTACT</span>
           </div>
 
-          <h2 class="text-4xl font-bold">
+          <h2 class="font-bold">
             <span class="text-white">GET IN</span>
             <span class="text-cyan-400 drop-shadow-[0_0_10px_#00e5ff]">TOUCH</span>
           </h2>
@@ -582,16 +415,16 @@
                 <label class="font-[cybernetik] text-xs block mb-2 text-white/88">NAME <span
                     class="text-[#ff6b2b]">*</span></label>
                 <input type="text" name="name" placeholder="Your Full Name" required
-                  class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors" />
+                  class="text-xs w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors" />
 
                 <label class="font-[cybernetik] text-xs block mt-4 mb-2 text-white/88">EMAIL <span
                     class="text-[#ff6b2b]">*</span></label>
                 <input type="email" name="email" placeholder="your@email.com" required
-                  class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors" />
+                  class="text-xs w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors" />
 
                 <label class="font-[cybernetik] text-xs block mt-4 mb-2 text-white/88">MESSAGE</label>
                 <textarea name="message" rows="4" placeholder="Tell me about your project..."
-                  class="w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors resize-y"></textarea>
+                  class="text-xs w-full px-3 py-2 bg-transparent border border-[#1a3a4a] text-[#e2f0f7] placeholder-[rgba(226,240,247,0.4)] focus:outline-none focus:border-[#00e5ff] transition-colors resize-y"></textarea>
 
                 <div class="flex gap-3 pt-2">
                   <button type="reset"
