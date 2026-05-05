@@ -177,3 +177,31 @@ canvas.cursor-trail {
     pointer-events: none;
     z-index: 9998;
 }
+
+/* Back to top button - hanya tampil di mobile */
+.back-to-top-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
+  background: #00e5ff;
+  color: #000;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+}
+
+.back-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Sembunyikan di desktop (lebar >= 769px) */
+@media (min-width: 769px) {
+  .back-to-top-btn {
+    display: none;
+  }
+}

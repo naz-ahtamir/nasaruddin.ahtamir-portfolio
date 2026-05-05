@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!element) return;
 
   // Daftar kata yang akan ditampilkan bergantian (sesuaikan dengan keinginan)
-  const words = ['bin AHTAMIR', 'bin AHMAD', 'bin SIME'];
+  const words = ['AHTAMIR', 'AHMAD', 'SIME'];
   
   let kataSaatIni = 0;       // index kata yang sedang diproses
   let indeksKarakter = 0;    // posisi karakter dalam kata
